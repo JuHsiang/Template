@@ -1,0 +1,71 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <title>模板管理系统</title>
+    <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- 公共样式 -->
+    <link rel="stylesheet" href="http://static.wikitec.com.cn/lib/v1.0/style.css" />
+    
+     <!-- 主题颜色 -->
+    <link href="../src/vendor/metronic/layout/css/themes/purple.css" rel="stylesheet" type="text/css" />
+    
+     <!-- 自定义样式 -->
+    <link href="../src/static/css/custom.css" rel="stylesheet" type="text/css" />
+    <style>
+     
+    </style>
+    <!-- END THEME STYLES -->
+</head>
+<body ms-controller="global" class="page-header-fixed  page-style-square page-sidebar-fixed">
+    <!-- BEGIN HEADER -->
+    <div ms-include-src="'src/app/head.html'"></div>
+    <!-- END HEADER -->
+
+    <div class="clearfix">
+    </div>
+
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN SIDEBAR -->
+        <div ms-include-src="'src/app/sidemenu.html'"></div>
+        <!-- END SIDEBAR -->
+
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <div id="msview">
+                    <div ms-view ms-controller="stateVm"></div>
+                </div>
+            </div>
+        </div>
+        <!-- END CONTENT -->
+    </div>
+    <!-- END CONTAINER -->
+
+    <!-- BEGIN FOOTER -->
+    <div class="page-footer">
+        <div class="scroll-to-top">
+            <i class="icon-arrow-up"></i>
+        </div>
+        <div class="page-footer-inner">
+            2015 &copy; Wikitec.
+        </div>
+    </div>
+    <!-- END FOOTER -->
+
+    <script src="http://static.wikitec.com.cn/lib/v1.0/avalon.lib.js"></script>
+    <script src="src/global.js"></script>
+    <script src="src/main.js"></script>
+</body>
+</html>

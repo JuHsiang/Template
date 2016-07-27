@@ -1,0 +1,1565 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3104D25C-122C-4D92-88DC-F84674DEAC32}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web.Portal</RootNamespace>
+    <AssemblyName>Web.Portal</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\Wikitec.Infrastructure\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\Wikitec.Infrastructure\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\packages\Wikitec.Infrastructure\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Wikitec.Infrastructure\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\packages\Wikitec.Infrastructure\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration">
+      <HintPath>..\packages\Wikitec.Infrastructure\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
+      <HintPath>..\packages\Wikitec.Infrastructure\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>..\packages\Wikitec.Infrastructure\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Wikitec.Infrastructure">
+      <HintPath>..\packages\Wikitec.Infrastructure\Wikitec.Infrastructure.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SysRoleController.cs" />
+    <Compile Include="Controllers\SysUserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Toolkits\AppSession.cs" />
+    <Compile Include="Toolkits\AuthorizeHelper.cs" />
+    <Compile Include="Toolkits\UserIdentity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="src\app\account\service.js" />
+    <Content Include="src\app\head.html" />
+    <Content Include="src\app\home\index.html" />
+    <Content Include="src\app\home\index.js" />
+    <Content Include="src\app\home\service.js" />
+    <Content Include="src\app\sidemenu.html" />
+    <Content Include="src\app\sys\role\index.html" />
+    <Content Include="src\app\sys\role\index.js" />
+    <Content Include="src\app\sys\role\service.js" />
+    <Content Include="src\app\sys\user\index.html" />
+    <Content Include="src\app\sys\user\index.js" />
+    <Content Include="src\app\sys\user\service.js" />
+    <Content Include="src\global.js" />
+    <Content Include="src\main.js" />
+    <Content Include="src\plugin\amCharts\css\style.css" />
+    <Content Include="src\plugin\amCharts\js\amcharts.js" />
+    <Content Include="src\plugin\amCharts\js\funnel.js" />
+    <Content Include="src\plugin\amCharts\js\gantt.js" />
+    <Content Include="src\plugin\amCharts\js\gauge.js" />
+    <Content Include="src\plugin\amCharts\js\pie.js" />
+    <Content Include="src\plugin\amCharts\js\radar.js" />
+    <Content Include="src\plugin\amCharts\js\serial.js" />
+    <Content Include="src\plugin\amCharts\js\xy.js" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\amcharts.js" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\funnel.js" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\gauge.js" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\images\dragIcon.gif" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\images\dragIconH.gif" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\images\lens.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\black\pattern1.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\black\pattern10.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\black\pattern11.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\black\pattern12.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\black\pattern13.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\black\pattern14.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\black\pattern15.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\black\pattern16.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\black\pattern17.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\black\pattern18.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\black\pattern19.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\black\pattern2.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\black\pattern20.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\black\pattern21.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\black\pattern3.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\black\pattern4.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\black\pattern5.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\black\pattern6.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\black\pattern7.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\black\pattern8.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\black\pattern9.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\chalk\pattern1.jpg" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\chalk\pattern1r.jpg" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\chalk\pattern2.jpg" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\chalk\pattern3.jpg" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\chalk\pattern4.jpg" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\chalk\pattern5.jpg" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\chalk\pattern6.jpg" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\white\pattern1.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\white\pattern10.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\white\pattern11.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\white\pattern12.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\white\pattern13.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\white\pattern14.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\white\pattern15.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\white\pattern16.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\white\pattern17.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\white\pattern18.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\white\pattern19.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\white\pattern2.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\white\pattern20.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\white\pattern21.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\white\pattern3.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\white\pattern4.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\white\pattern5.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\white\pattern6.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\white\pattern7.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\white\pattern8.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\patterns\white\pattern9.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\pie.js" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\radar.js" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\serial.js" />
+    <Content Include="src\plugin\amcharts_3.1.1\amcharts\xy.js" />
+    <Content Include="src\plugin\amcharts_3.1.1\changeLog.txt" />
+    <Content Include="src\plugin\amcharts_3.1.1\images\bg.gif" />
+    <Content Include="src\plugin\amcharts_3.1.1\images\logo.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\images\style.css" />
+    <Content Include="src\plugin\amcharts_3.1.1\index.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\licence.txt" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\angularGauge.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\angularGaugeWithTwoAxes.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\area100PercentStacked.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\areaStacked.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\areaWithTimeBasedData.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\bar3D.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\barAndLineMix.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\barClustered.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\barFloating.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\barStacked.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\barWithBackgroundImage.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\bulletChart.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\candleStick.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\clock.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\clockWithTwoFaces.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\column100PercentStacked.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\column3D.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\column3DStacked.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\columnAndLineMix.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\columnRotatedSeries.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\columnSimple.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\columnStacked.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\columnWithGradientFills.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\columnWithImages.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\columnWithPatterns.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\errorChart.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\funnelChart.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\handDrawnChart.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\images\0.gif" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\images\1.gif" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\images\2.gif" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\images\3.gif" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\images\bg.jpg" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\images\bgSky.jpg" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\images\bicycle.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\images\board.jpg" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\images\car.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\images\motorcycle.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\images\redstar.png" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\images\star.gif" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\lineSmoothed.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\lineStep.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\lineStepNoRisers.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\lineWithChangingColor.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\lineWithCustomBullets.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\lineWithDataGaps.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\lineWithDateBasedData.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\lineWithDifferentBulletSizes.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\lineWithDurationOnValueAxis.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\lineWithFilledValueRanges.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\lineWithLogarithmicValueAxis.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\lineWithMultipleValueAxes.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\lineWithReversedValueAxis.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\lineWithScrollAndZoom.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\lineWithTrendLines.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\microCharts.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\ohlc.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\pie3D.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\pieDonut3D.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\pieSimple.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\pieWithLegend.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\pieWithPatterns.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\pyramidChart.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\radarPolar.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\radarSimple.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\style.css" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\waterFallChart.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\xyBubbleSimple.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\xyBubbleWithZoom.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\samples\xyScatter.html" />
+    <Content Include="src\plugin\amcharts_3.1.1\thirdPartySoftwareList.txt" />
+    <Content Include="src\plugin\bootstrap-hover-dropdown.min.js" />
+    <Content Include="src\plugin\bootstrap.wizard.min.js" />
+    <Content Include="src\plugin\datepicker\css\datepicker.css" />
+    <Content Include="src\plugin\datepicker\css\datepicker3.css" />
+    <Content Include="src\plugin\datepicker\js\datepicker.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.ar.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.az.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.cy.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.da.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.de.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.el.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.es.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.et.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.fa.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.gl.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.he.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.id.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.is.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.it.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.ka.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.kk.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.mk.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.nb.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.nl-BE.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.no.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.sq.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.th.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.ua.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.vi.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="src\plugin\datepicker\js\locales\bootstrap-datepicker.zh-TW.js" />
+    <Content Include="src\plugin\datetimepicker\bootstrap-datetimepicker.css" />
+    <Content Include="src\plugin\datetimepicker\bootstrap-datetimepicker.js" />
+    <Content Include="src\plugin\datetimepicker\bootstrap-datetimepicker.zh-CN.js" />
+    <Content Include="src\plugin\fileload\1.png" />
+    <Content Include="src\plugin\fileload\2.jpg" />
+    <Content Include="src\plugin\fileload\ajaxfileupload.js" />
+    <Content Include="src\plugin\fileload\jquery-ui-1.8.13.custom.min.js" />
+    <Content Include="src\plugin\fileload\load-services.js" />
+    <Content Include="src\plugin\fileload\min.js" />
+    <Content Include="src\plugin\fileload\style.css" />
+    <Content Include="src\plugin\fileload\ui-lightness\images\ui-anim_basic_16x16.gif" />
+    <Content Include="src\plugin\fileload\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="src\plugin\fileload\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="src\plugin\fileload\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="src\plugin\fileload\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="src\plugin\fileload\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="src\plugin\fileload\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="src\plugin\fileload\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="src\plugin\fileload\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="src\plugin\fileload\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="src\plugin\fileload\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="src\plugin\fileload\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="src\plugin\fileload\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="src\plugin\fileload\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="src\plugin\fileload\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="src\plugin\fileload\ui-lightness\jquery-ui-1.8.2.custom.css" />
+    <Content Include="src\plugin\fileload\ui-lightness\jquery.ui.accordion.css" />
+    <Content Include="src\plugin\fileload\ui-lightness\jquery.ui.all.css" />
+    <Content Include="src\plugin\fileload\ui-lightness\jquery.ui.autocomplete.css" />
+    <Content Include="src\plugin\fileload\ui-lightness\jquery.ui.base.css" />
+    <Content Include="src\plugin\fileload\ui-lightness\jquery.ui.button.css" />
+    <Content Include="src\plugin\fileload\ui-lightness\jquery.ui.core.css" />
+    <Content Include="src\plugin\fileload\ui-lightness\jquery.ui.datepicker.css" />
+    <Content Include="src\plugin\fileload\ui-lightness\jquery.ui.dialog.css" />
+    <Content Include="src\plugin\fileload\ui-lightness\jquery.ui.progressbar.css" />
+    <Content Include="src\plugin\fileload\ui-lightness\jquery.ui.resizable.css" />
+    <Content Include="src\plugin\fileload\ui-lightness\jquery.ui.selectable.css" />
+    <Content Include="src\plugin\fileload\ui-lightness\jquery.ui.slider.css" />
+    <Content Include="src\plugin\fileload\ui-lightness\jquery.ui.tabs.css" />
+    <Content Include="src\plugin\fileload\ui-lightness\jquery.ui.theme.css" />
+    <Content Include="src\plugin\fullcalendar\fullcalendar.css" />
+    <Content Include="src\plugin\fullcalendar\fullcalendar.min.js" />
+    <Content Include="src\plugin\icheck-1.x\demo\css\banner.jpg" />
+    <Content Include="src\plugin\icheck-1.x\demo\css\custom.css" />
+    <Content Include="src\plugin\icheck-1.x\demo\css\icheck.png" />
+    <Content Include="src\plugin\icheck-1.x\demo\css\ie\arrow-bottom.png" />
+    <Content Include="src\plugin\icheck-1.x\demo\css\ie\arrow-top.png" />
+    <Content Include="src\plugin\icheck-1.x\demo\css\ie\header-line.png" />
+    <Content Include="src\plugin\icheck-1.x\demo\css\ie\icon-fork.png" />
+    <Content Include="src\plugin\icheck-1.x\demo\css\ie\icon-github.png" />
+    <Content Include="src\plugin\icheck-1.x\demo\css\ie\icon-lab.png" />
+    <Content Include="src\plugin\icheck-1.x\demo\css\ie\icon-options.png" />
+    <Content Include="src\plugin\icheck-1.x\demo\css\ie\icon-star.png" />
+    <Content Include="src\plugin\icheck-1.x\demo\css\montserrat-bold.svg" />
+    <Content Include="src\plugin\icheck-1.x\demo\css\montserrat-regular.svg" />
+    <Content Include="src\plugin\icheck-1.x\demo\css\normalize.css" />
+    <Content Include="src\plugin\icheck-1.x\demo\index.html" />
+    <Content Include="src\plugin\icheck-1.x\demo\js\custom.js" />
+    <Content Include="src\plugin\icheck-1.x\demo\js\custom.min.js" />
+    <Content Include="src\plugin\icheck-1.x\demo\js\jquery.js" />
+    <Content Include="src\plugin\icheck-1.x\demo\js\zepto.js" />
+    <Content Include="src\plugin\icheck-1.x\icheck.js" />
+    <Content Include="src\plugin\icheck-1.x\icheck.min.js" />
+    <Content Include="src\plugin\icheck-1.x\skins\all.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\aero%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\aero.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\aero.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\blue%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\blue.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\blue.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\flat%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\flat.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\flat.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\green%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\green.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\green.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\grey%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\grey.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\grey.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\orange%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\orange.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\orange.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\pink%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\pink.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\pink.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\purple%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\purple.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\purple.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\red%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\red.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\red.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\yellow%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\yellow.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\yellow.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\flat\_all.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\futurico\futurico%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\futurico\futurico.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\futurico\futurico.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\line\aero.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\line\blue.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\line\green.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\line\grey.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\line\line%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\line\line.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\line\line.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\line\orange.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\line\pink.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\line\purple.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\line\red.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\line\yellow.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\line\_all.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\aero%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\aero.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\aero.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\blue%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\blue.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\blue.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\green%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\green.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\green.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\grey%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\grey.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\grey.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\minimal%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\minimal.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\minimal.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\orange%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\orange.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\orange.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\pink%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\pink.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\pink.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\purple%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\purple.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\purple.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\red%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\red.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\red.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\yellow%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\yellow.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\yellow.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\minimal\_all.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\polaris\polaris%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\polaris\polaris.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\polaris\polaris.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\aero%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\aero.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\aero.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\blue%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\blue.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\blue.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\green%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\green.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\green.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\grey%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\grey.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\grey.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\orange%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\orange.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\orange.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\pink%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\pink.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\pink.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\purple%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\purple.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\purple.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\red%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\red.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\red.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\square%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\square.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\square.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\yellow%402x.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\yellow.css" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\yellow.png" />
+    <Content Include="src\plugin\icheck-1.x\skins\square\_all.css" />
+    <Content Include="src\plugin\jquery-file-upload\blueimp-gallery\blueimp-gallery.min.css" />
+    <Content Include="src\plugin\jquery-file-upload\blueimp-gallery\jquery.blueimp-gallery.min.js" />
+    <Content Include="src\plugin\jquery-file-upload\cors\postmessage.html" />
+    <Content Include="src\plugin\jquery-file-upload\cors\result.html" />
+    <Content Include="src\plugin\jquery-file-upload\css\demo-ie8.css" />
+    <Content Include="src\plugin\jquery-file-upload\css\demo.css" />
+    <Content Include="src\plugin\jquery-file-upload\css\jquery.fileupload-noscript.css" />
+    <Content Include="src\plugin\jquery-file-upload\css\jquery.fileupload-ui-noscript.css" />
+    <Content Include="src\plugin\jquery-file-upload\css\jquery.fileupload-ui.css" />
+    <Content Include="src\plugin\jquery-file-upload\css\jquery.fileupload.css" />
+    <Content Include="src\plugin\jquery-file-upload\css\style.css" />
+    <Content Include="src\plugin\jquery-file-upload\img\loading.gif" />
+    <Content Include="src\plugin\jquery-file-upload\img\progressbar.gif" />
+    <Content Include="src\plugin\jquery-file-upload\js\app.js" />
+    <Content Include="src\plugin\jquery-file-upload\js\cors\jquery.postmessage-transport.js" />
+    <Content Include="src\plugin\jquery-file-upload\js\cors\jquery.xdr-transport.js" />
+    <Content Include="src\plugin\jquery-file-upload\js\jquery.fileupload-angular.js" />
+    <Content Include="src\plugin\jquery-file-upload\js\jquery.fileupload-audio.js" />
+    <Content Include="src\plugin\jquery-file-upload\js\jquery.fileupload-image.js" />
+    <Content Include="src\plugin\jquery-file-upload\js\jquery.fileupload-jquery-ui.js" />
+    <Content Include="src\plugin\jquery-file-upload\js\jquery.fileupload-process.js" />
+    <Content Include="src\plugin\jquery-file-upload\js\jquery.fileupload-ui.js" />
+    <Content Include="src\plugin\jquery-file-upload\js\jquery.fileupload-validate.js" />
+    <Content Include="src\plugin\jquery-file-upload\js\jquery.fileupload-video.js" />
+    <Content Include="src\plugin\jquery-file-upload\js\jquery.fileupload.js" />
+    <Content Include="src\plugin\jquery-file-upload\js\jquery.iframe-transport.js" />
+    <Content Include="src\plugin\jquery-file-upload\js\main.js" />
+    <Content Include="src\plugin\jquery-file-upload\js\vendor\canvas-to-blob.min.js" />
+    <Content Include="src\plugin\jquery-file-upload\js\vendor\jquery.ui.widget.js" />
+    <Content Include="src\plugin\jquery-file-upload\js\vendor\load-image.min.js" />
+    <Content Include="src\plugin\jquery-file-upload\js\vendor\tmpl.min.js" />
+    <Content Include="src\plugin\jquery-file-upload\server\gae-go\static\favicon.ico" />
+    <Content Include="src\plugin\jquery-file-upload\server\gae-go\static\robots.txt" />
+    <Content Include="src\plugin\jquery-file-upload\server\gae-python\static\favicon.ico" />
+    <Content Include="src\plugin\jquery-file-upload\server\gae-python\static\robots.txt" />
+    <Content Include="src\plugin\jquery-file-upload\server\node\server.js" />
+    <Content Include="src\plugin\jquery-ui-custom.js" />
+    <Content Include="src\plugin\jquery.blockui.min.js" />
+    <Content Include="src\plugin\jquery.slimscroll.min.js" />
+    <Content Include="src\plugin\jquery.ui.widget.js" />
+    <Content Include="src\plugin\jquery.validate.min.js" />
+    <Content Include="src\plugin\jscharts.js" />
+    <Content Include="src\plugin\jstree\jstree.js" />
+    <Content Include="src\plugin\jstree\jstree.min.js" />
+    <Content Include="src\plugin\jstree\themes\default\32px.png" />
+    <Content Include="src\plugin\jstree\themes\default\32px_line.png" />
+    <Content Include="src\plugin\jstree\themes\default\32px_original.png" />
+    <Content Include="src\plugin\jstree\themes\default\40px.png" />
+    <Content Include="src\plugin\jstree\themes\default\style.css" />
+    <Content Include="src\plugin\jstree\themes\default\style.min.css" />
+    <Content Include="src\plugin\jstree\themes\default\throbber.gif" />
+    <Content Include="src\plugin\mCustomScrollbar\jquery.mCustomScrollbar.css" />
+    <Content Include="src\plugin\mCustomScrollbar\jquery.mCustomScrollbar.min.js" />
+    <Content Include="src\plugin\mCustomScrollbar\jquery.mousewheel.min.js" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\build\pdf.js" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\build\pdf.worker.js" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\compatibility.js" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\debugger.js" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\annotation-check.svg" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\annotation-comment.svg" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\annotation-help.svg" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\annotation-insert.svg" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\annotation-key.svg" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\annotation-newparagraph.svg" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\annotation-noicon.svg" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\annotation-note.svg" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\annotation-paragraph.svg" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\findbarButton-next%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\findbarButton-next-rtl%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\findbarButton-next-rtl.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\findbarButton-next.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\findbarButton-previous%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\findbarButton-previous-rtl%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\findbarButton-previous-rtl.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\findbarButton-previous.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\grab.cur" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\grabbing.cur" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\loading-icon.gif" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\loading-small%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\loading-small.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\secondaryToolbarButton-documentProperties%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\secondaryToolbarButton-documentProperties.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\secondaryToolbarButton-firstPage%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\secondaryToolbarButton-firstPage.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\secondaryToolbarButton-handTool%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\secondaryToolbarButton-handTool.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\secondaryToolbarButton-lastPage%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\secondaryToolbarButton-lastPage.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\secondaryToolbarButton-rotateCcw%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\secondaryToolbarButton-rotateCcw.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\secondaryToolbarButton-rotateCw%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\secondaryToolbarButton-rotateCw.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\shadow.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\texture.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-bookmark%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-bookmark.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-download%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-download.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-menuArrows%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-menuArrows.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-openFile%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-openFile.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-pageDown%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-pageDown-rtl%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-pageDown-rtl.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-pageDown.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-pageUp%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-pageUp-rtl%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-pageUp-rtl.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-pageUp.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-presentationMode%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-presentationMode.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-print%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-print.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-search%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-search.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-secondaryToolbarToggle%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-secondaryToolbarToggle-rtl%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-secondaryToolbarToggle-rtl.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-secondaryToolbarToggle.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-sidebarToggle%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-sidebarToggle-rtl%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-sidebarToggle-rtl.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-sidebarToggle.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-viewAttachments%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-viewAttachments.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-viewOutline%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-viewOutline-rtl%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-viewOutline-rtl.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-viewOutline.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-viewThumbnail%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-viewThumbnail.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-zoomIn%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-zoomIn.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-zoomOut%402x.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\images\toolbarButton-zoomOut.png" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\l10n.js" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\viewer.css" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\viewer.html" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\viewer.js" />
+    <Content Include="src\plugin\select2\select2-spinner.gif" />
+    <Content Include="src\plugin\select2\select2.css" />
+    <Content Include="src\plugin\select2\select2.min.js" />
+    <Content Include="src\plugin\select2\select2.png" />
+    <Content Include="src\plugin\select2\select2x2.png" />
+    <Content Include="src\plugin\select2\select2_locale_zh-CN.js" />
+    <Content Include="src\plugin\spectrum\css.css" />
+    <Content Include="src\plugin\spectrum\js.js" />
+    <Content Include="src\plugin\store.min.js" />
+    <Content Include="src\plugin\toastr\toastr.min.css" />
+    <Content Include="src\plugin\toastr\toastr.min.js" />
+    <Content Include="src\plugin\xdate.js" />
+    <Content Include="src\route.js" />
+    <Content Include="src\static\401.html" />
+    <Content Include="src\static\403.html" />
+    <Content Include="src\static\404.html" />
+    <Content Include="src\static\500.html" />
+    <Content Include="src\static\css\animate.css" />
+    <Content Include="src\static\css\bootstrap.css" />
+    <Content Include="src\static\css\custom.css" />
+    <Content Include="src\static\css\font-awesome.css" />
+    <Content Include="src\static\css\images\animated-overlay.gif" />
+    <Content Include="src\static\css\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="src\static\css\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="src\static\css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="src\static\css\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="src\static\css\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="src\static\css\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="src\static\css\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="src\static\css\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="src\static\css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="src\static\css\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="src\static\css\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="src\static\css\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="src\static\css\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="src\static\css\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="src\static\css\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="src\static\css\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="src\static\css\images\ui-icons_222222_256x240.png" />
+    <Content Include="src\static\css\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="src\static\css\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="src\static\css\images\ui-icons_454545_256x240.png" />
+    <Content Include="src\static\css\images\ui-icons_888888_256x240.png" />
+    <Content Include="src\static\css\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="src\static\css\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="src\static\css\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="src\static\css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="src\static\css\jquery-ui-1.10.3.custom.min.css" />
+    <Content Include="src\static\css\simple-line-icons.css" />
+    <Content Include="src\static\fonts\fontawesome-webfont.svg" />
+    <Content Include="src\static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="src\static\fonts\Simple-Line-Icons.dev.svg" />
+    <Content Include="src\static\fonts\Simple-Line-Icons.svg" />
+    <Content Include="src\static\img\archivePhoto.jpg" />
+    <Content Include="src\static\img\avatar.png" />
+    <Content Include="src\static\img\birthday.png" />
+    <Content Include="src\static\img\girl.jpg" />
+    <Content Include="src\static\img\noFile.jpg" />
+    <Content Include="src\static\img\u789.png" />
+    <Content Include="src\static\img\user.jpg" />
+    <Content Include="src\util\ajaxGlobal.js" />
+    <Content Include="src\util\animate.js" />
+    <Content Include="src\util\config.js" />
+    <Content Include="src\util\dateUtil.js" />
+    <Content Include="src\util\message.js" />
+    <Content Include="src\util\pager.js" />
+    <Content Include="src\util\stringUtil.js" />
+    <Content Include="src\util\tab.js" />
+    <Content Include="src\util\urlUtil.js" />
+    <Content Include="src\util\validator.js" />
+    <Content Include="src\vendor\amcharts.js" />
+    <Content Include="src\vendor\avalon\avalon.js" />
+    <Content Include="src\vendor\avalon\avalon.shim.js" />
+    <Content Include="src\vendor\avalon\mmHistory.js" />
+    <Content Include="src\vendor\avalon\mmPromise.js" />
+    <Content Include="src\vendor\avalon\mmRouter.js" />
+    <Content Include="src\vendor\avalon\mmState.js" />
+    <Content Include="src\vendor\bootstrap.js" />
+    <Content Include="src\vendor\jquery.js" />
+    <Content Include="src\vendor\jquery.linq.min.js" />
+    <Content Include="src\vendor\lodash.js" />
+    <Content Include="src\vendor\metronic\backstretch\jquery.backstretch.min.js" />
+    <Content Include="src\vendor\metronic\bootstrap.min.js" />
+    <Content Include="src\vendor\metronic\bootstrap\js\bootstrap.min.js" />
+    <Content Include="src\vendor\metronic\css\bootstrap.min.css" />
+    <Content Include="src\vendor\metronic\css\components-rounded.css" />
+    <Content Include="src\vendor\metronic\css\components.css" />
+    <Content Include="src\vendor\metronic\css\custom.css" />
+    <Content Include="src\vendor\metronic\css\default.css" />
+    <Content Include="src\vendor\metronic\css\error.css" />
+    <Content Include="src\vendor\metronic\css\font-awesome.min.css" />
+    <Content Include="src\vendor\metronic\css\gfonts1.css" />
+    <Content Include="src\vendor\metronic\css\layout.css" />
+    <Content Include="src\vendor\metronic\css\login-soft.css" />
+    <Content Include="src\vendor\metronic\css\plugins.css" />
+    <Content Include="src\vendor\metronic\css\select2.css" />
+    <Content Include="src\vendor\metronic\css\simple-line-icons.min.css" />
+    <Content Include="src\vendor\metronic\css\tasks.css" />
+    <Content Include="src\vendor\metronic\css\uniform.default.css" />
+    <Content Include="src\vendor\metronic\demo.js" />
+    <Content Include="src\vendor\metronic\img\1.jpg" />
+    <Content Include="src\vendor\metronic\img\2.jpg" />
+    <Content Include="src\vendor\metronic\img\3.jpg" />
+    <Content Include="src\vendor\metronic\img\4.jpg" />
+    <Content Include="src\vendor\metronic\img\accordion-plusminus.png" />
+    <Content Include="src\vendor\metronic\img\ajax-loading.gif" />
+    <Content Include="src\vendor\metronic\img\ajax-modal-loading.gif" />
+    <Content Include="src\vendor\metronic\img\bg-white-lock.png" />
+    <Content Include="src\vendor\metronic\img\datatable-row-openclose.png" />
+    <Content Include="src\vendor\metronic\img\flags\ad.png" />
+    <Content Include="src\vendor\metronic\img\flags\ae.png" />
+    <Content Include="src\vendor\metronic\img\flags\af.png" />
+    <Content Include="src\vendor\metronic\img\flags\ag.png" />
+    <Content Include="src\vendor\metronic\img\flags\ai.png" />
+    <Content Include="src\vendor\metronic\img\flags\al.png" />
+    <Content Include="src\vendor\metronic\img\flags\am.png" />
+    <Content Include="src\vendor\metronic\img\flags\an.png" />
+    <Content Include="src\vendor\metronic\img\flags\ao.png" />
+    <Content Include="src\vendor\metronic\img\flags\ar.png" />
+    <Content Include="src\vendor\metronic\img\flags\as.png" />
+    <Content Include="src\vendor\metronic\img\flags\at.png" />
+    <Content Include="src\vendor\metronic\img\flags\au.png" />
+    <Content Include="src\vendor\metronic\img\flags\aw.png" />
+    <Content Include="src\vendor\metronic\img\flags\ax.png" />
+    <Content Include="src\vendor\metronic\img\flags\az.png" />
+    <Content Include="src\vendor\metronic\img\flags\ba.png" />
+    <Content Include="src\vendor\metronic\img\flags\bb.png" />
+    <Content Include="src\vendor\metronic\img\flags\bd.png" />
+    <Content Include="src\vendor\metronic\img\flags\be.png" />
+    <Content Include="src\vendor\metronic\img\flags\bf.png" />
+    <Content Include="src\vendor\metronic\img\flags\bg.png" />
+    <Content Include="src\vendor\metronic\img\flags\bh.png" />
+    <Content Include="src\vendor\metronic\img\flags\bi.png" />
+    <Content Include="src\vendor\metronic\img\flags\bj.png" />
+    <Content Include="src\vendor\metronic\img\flags\bm.png" />
+    <Content Include="src\vendor\metronic\img\flags\bn.png" />
+    <Content Include="src\vendor\metronic\img\flags\bo.png" />
+    <Content Include="src\vendor\metronic\img\flags\br.png" />
+    <Content Include="src\vendor\metronic\img\flags\bs.png" />
+    <Content Include="src\vendor\metronic\img\flags\bt.png" />
+    <Content Include="src\vendor\metronic\img\flags\bv.png" />
+    <Content Include="src\vendor\metronic\img\flags\bw.png" />
+    <Content Include="src\vendor\metronic\img\flags\by.png" />
+    <Content Include="src\vendor\metronic\img\flags\bz.png" />
+    <Content Include="src\vendor\metronic\img\flags\ca.png" />
+    <Content Include="src\vendor\metronic\img\flags\catalonia.png" />
+    <Content Include="src\vendor\metronic\img\flags\cc.png" />
+    <Content Include="src\vendor\metronic\img\flags\cd.png" />
+    <Content Include="src\vendor\metronic\img\flags\cf.png" />
+    <Content Include="src\vendor\metronic\img\flags\cg.png" />
+    <Content Include="src\vendor\metronic\img\flags\ch.png" />
+    <Content Include="src\vendor\metronic\img\flags\ci.png" />
+    <Content Include="src\vendor\metronic\img\flags\ck.png" />
+    <Content Include="src\vendor\metronic\img\flags\cl.png" />
+    <Content Include="src\vendor\metronic\img\flags\cm.png" />
+    <Content Include="src\vendor\metronic\img\flags\cn.png" />
+    <Content Include="src\vendor\metronic\img\flags\co.png" />
+    <Content Include="src\vendor\metronic\img\flags\cr.png" />
+    <Content Include="src\vendor\metronic\img\flags\cs.png" />
+    <Content Include="src\vendor\metronic\img\flags\cu.png" />
+    <Content Include="src\vendor\metronic\img\flags\cv.png" />
+    <Content Include="src\vendor\metronic\img\flags\cx.png" />
+    <Content Include="src\vendor\metronic\img\flags\cy.png" />
+    <Content Include="src\vendor\metronic\img\flags\cz.png" />
+    <Content Include="src\vendor\metronic\img\flags\de.png" />
+    <Content Include="src\vendor\metronic\img\flags\dj.png" />
+    <Content Include="src\vendor\metronic\img\flags\dk.png" />
+    <Content Include="src\vendor\metronic\img\flags\dm.png" />
+    <Content Include="src\vendor\metronic\img\flags\do.png" />
+    <Content Include="src\vendor\metronic\img\flags\dz.png" />
+    <Content Include="src\vendor\metronic\img\flags\ec.png" />
+    <Content Include="src\vendor\metronic\img\flags\ee.png" />
+    <Content Include="src\vendor\metronic\img\flags\eg.png" />
+    <Content Include="src\vendor\metronic\img\flags\eh.png" />
+    <Content Include="src\vendor\metronic\img\flags\england.png" />
+    <Content Include="src\vendor\metronic\img\flags\er.png" />
+    <Content Include="src\vendor\metronic\img\flags\es.png" />
+    <Content Include="src\vendor\metronic\img\flags\et.png" />
+    <Content Include="src\vendor\metronic\img\flags\europeanunion.png" />
+    <Content Include="src\vendor\metronic\img\flags\fam.png" />
+    <Content Include="src\vendor\metronic\img\flags\fi.png" />
+    <Content Include="src\vendor\metronic\img\flags\fj.png" />
+    <Content Include="src\vendor\metronic\img\flags\fk.png" />
+    <Content Include="src\vendor\metronic\img\flags\fm.png" />
+    <Content Include="src\vendor\metronic\img\flags\fo.png" />
+    <Content Include="src\vendor\metronic\img\flags\fr.png" />
+    <Content Include="src\vendor\metronic\img\flags\ga.png" />
+    <Content Include="src\vendor\metronic\img\flags\gb.png" />
+    <Content Include="src\vendor\metronic\img\flags\gd.png" />
+    <Content Include="src\vendor\metronic\img\flags\ge.png" />
+    <Content Include="src\vendor\metronic\img\flags\gf.png" />
+    <Content Include="src\vendor\metronic\img\flags\gh.png" />
+    <Content Include="src\vendor\metronic\img\flags\gi.png" />
+    <Content Include="src\vendor\metronic\img\flags\gl.png" />
+    <Content Include="src\vendor\metronic\img\flags\gm.png" />
+    <Content Include="src\vendor\metronic\img\flags\gn.png" />
+    <Content Include="src\vendor\metronic\img\flags\gp.png" />
+    <Content Include="src\vendor\metronic\img\flags\gq.png" />
+    <Content Include="src\vendor\metronic\img\flags\gr.png" />
+    <Content Include="src\vendor\metronic\img\flags\gs.png" />
+    <Content Include="src\vendor\metronic\img\flags\gt.png" />
+    <Content Include="src\vendor\metronic\img\flags\gu.png" />
+    <Content Include="src\vendor\metronic\img\flags\gw.png" />
+    <Content Include="src\vendor\metronic\img\flags\gy.png" />
+    <Content Include="src\vendor\metronic\img\flags\hk.png" />
+    <Content Include="src\vendor\metronic\img\flags\hm.png" />
+    <Content Include="src\vendor\metronic\img\flags\hn.png" />
+    <Content Include="src\vendor\metronic\img\flags\hr.png" />
+    <Content Include="src\vendor\metronic\img\flags\ht.png" />
+    <Content Include="src\vendor\metronic\img\flags\hu.png" />
+    <Content Include="src\vendor\metronic\img\flags\id.png" />
+    <Content Include="src\vendor\metronic\img\flags\ie.png" />
+    <Content Include="src\vendor\metronic\img\flags\il.png" />
+    <Content Include="src\vendor\metronic\img\flags\in.png" />
+    <Content Include="src\vendor\metronic\img\flags\io.png" />
+    <Content Include="src\vendor\metronic\img\flags\iq.png" />
+    <Content Include="src\vendor\metronic\img\flags\ir.png" />
+    <Content Include="src\vendor\metronic\img\flags\is.png" />
+    <Content Include="src\vendor\metronic\img\flags\it.png" />
+    <Content Include="src\vendor\metronic\img\flags\jm.png" />
+    <Content Include="src\vendor\metronic\img\flags\jo.png" />
+    <Content Include="src\vendor\metronic\img\flags\jp.png" />
+    <Content Include="src\vendor\metronic\img\flags\ke.png" />
+    <Content Include="src\vendor\metronic\img\flags\kg.png" />
+    <Content Include="src\vendor\metronic\img\flags\kh.png" />
+    <Content Include="src\vendor\metronic\img\flags\ki.png" />
+    <Content Include="src\vendor\metronic\img\flags\km.png" />
+    <Content Include="src\vendor\metronic\img\flags\kn.png" />
+    <Content Include="src\vendor\metronic\img\flags\kp.png" />
+    <Content Include="src\vendor\metronic\img\flags\kr.png" />
+    <Content Include="src\vendor\metronic\img\flags\kw.png" />
+    <Content Include="src\vendor\metronic\img\flags\ky.png" />
+    <Content Include="src\vendor\metronic\img\flags\kz.png" />
+    <Content Include="src\vendor\metronic\img\flags\la.png" />
+    <Content Include="src\vendor\metronic\img\flags\lb.png" />
+    <Content Include="src\vendor\metronic\img\flags\lc.png" />
+    <Content Include="src\vendor\metronic\img\flags\li.png" />
+    <Content Include="src\vendor\metronic\img\flags\lk.png" />
+    <Content Include="src\vendor\metronic\img\flags\lr.png" />
+    <Content Include="src\vendor\metronic\img\flags\ls.png" />
+    <Content Include="src\vendor\metronic\img\flags\lt.png" />
+    <Content Include="src\vendor\metronic\img\flags\lu.png" />
+    <Content Include="src\vendor\metronic\img\flags\lv.png" />
+    <Content Include="src\vendor\metronic\img\flags\ly.png" />
+    <Content Include="src\vendor\metronic\img\flags\ma.png" />
+    <Content Include="src\vendor\metronic\img\flags\mc.png" />
+    <Content Include="src\vendor\metronic\img\flags\md.png" />
+    <Content Include="src\vendor\metronic\img\flags\me.png" />
+    <Content Include="src\vendor\metronic\img\flags\mg.png" />
+    <Content Include="src\vendor\metronic\img\flags\mh.png" />
+    <Content Include="src\vendor\metronic\img\flags\mk.png" />
+    <Content Include="src\vendor\metronic\img\flags\ml.png" />
+    <Content Include="src\vendor\metronic\img\flags\mm.png" />
+    <Content Include="src\vendor\metronic\img\flags\mn.png" />
+    <Content Include="src\vendor\metronic\img\flags\mo.png" />
+    <Content Include="src\vendor\metronic\img\flags\mp.png" />
+    <Content Include="src\vendor\metronic\img\flags\mq.png" />
+    <Content Include="src\vendor\metronic\img\flags\mr.png" />
+    <Content Include="src\vendor\metronic\img\flags\ms.png" />
+    <Content Include="src\vendor\metronic\img\flags\mt.png" />
+    <Content Include="src\vendor\metronic\img\flags\mu.png" />
+    <Content Include="src\vendor\metronic\img\flags\mv.png" />
+    <Content Include="src\vendor\metronic\img\flags\mw.png" />
+    <Content Include="src\vendor\metronic\img\flags\mx.png" />
+    <Content Include="src\vendor\metronic\img\flags\my.png" />
+    <Content Include="src\vendor\metronic\img\flags\mz.png" />
+    <Content Include="src\vendor\metronic\img\flags\na.png" />
+    <Content Include="src\vendor\metronic\img\flags\nc.png" />
+    <Content Include="src\vendor\metronic\img\flags\ne.png" />
+    <Content Include="src\vendor\metronic\img\flags\nf.png" />
+    <Content Include="src\vendor\metronic\img\flags\ng.png" />
+    <Content Include="src\vendor\metronic\img\flags\ni.png" />
+    <Content Include="src\vendor\metronic\img\flags\nl.png" />
+    <Content Include="src\vendor\metronic\img\flags\no.png" />
+    <Content Include="src\vendor\metronic\img\flags\np.png" />
+    <Content Include="src\vendor\metronic\img\flags\nr.png" />
+    <Content Include="src\vendor\metronic\img\flags\nu.png" />
+    <Content Include="src\vendor\metronic\img\flags\nz.png" />
+    <Content Include="src\vendor\metronic\img\flags\om.png" />
+    <Content Include="src\vendor\metronic\img\flags\pa.png" />
+    <Content Include="src\vendor\metronic\img\flags\pe.png" />
+    <Content Include="src\vendor\metronic\img\flags\pf.png" />
+    <Content Include="src\vendor\metronic\img\flags\pg.png" />
+    <Content Include="src\vendor\metronic\img\flags\ph.png" />
+    <Content Include="src\vendor\metronic\img\flags\pk.png" />
+    <Content Include="src\vendor\metronic\img\flags\pl.png" />
+    <Content Include="src\vendor\metronic\img\flags\pm.png" />
+    <Content Include="src\vendor\metronic\img\flags\pn.png" />
+    <Content Include="src\vendor\metronic\img\flags\pr.png" />
+    <Content Include="src\vendor\metronic\img\flags\ps.png" />
+    <Content Include="src\vendor\metronic\img\flags\pt.png" />
+    <Content Include="src\vendor\metronic\img\flags\pw.png" />
+    <Content Include="src\vendor\metronic\img\flags\py.png" />
+    <Content Include="src\vendor\metronic\img\flags\qa.png" />
+    <Content Include="src\vendor\metronic\img\flags\re.png" />
+    <Content Include="src\vendor\metronic\img\flags\readme.txt" />
+    <Content Include="src\vendor\metronic\img\flags\ro.png" />
+    <Content Include="src\vendor\metronic\img\flags\rs.png" />
+    <Content Include="src\vendor\metronic\img\flags\ru.png" />
+    <Content Include="src\vendor\metronic\img\flags\rw.png" />
+    <Content Include="src\vendor\metronic\img\flags\sa.png" />
+    <Content Include="src\vendor\metronic\img\flags\sb.png" />
+    <Content Include="src\vendor\metronic\img\flags\sc.png" />
+    <Content Include="src\vendor\metronic\img\flags\scotland.png" />
+    <Content Include="src\vendor\metronic\img\flags\sd.png" />
+    <Content Include="src\vendor\metronic\img\flags\se.png" />
+    <Content Include="src\vendor\metronic\img\flags\sg.png" />
+    <Content Include="src\vendor\metronic\img\flags\sh.png" />
+    <Content Include="src\vendor\metronic\img\flags\si.png" />
+    <Content Include="src\vendor\metronic\img\flags\sj.png" />
+    <Content Include="src\vendor\metronic\img\flags\sk.png" />
+    <Content Include="src\vendor\metronic\img\flags\sl.png" />
+    <Content Include="src\vendor\metronic\img\flags\sm.png" />
+    <Content Include="src\vendor\metronic\img\flags\sn.png" />
+    <Content Include="src\vendor\metronic\img\flags\so.png" />
+    <Content Include="src\vendor\metronic\img\flags\sr.png" />
+    <Content Include="src\vendor\metronic\img\flags\st.png" />
+    <Content Include="src\vendor\metronic\img\flags\sv.png" />
+    <Content Include="src\vendor\metronic\img\flags\sy.png" />
+    <Content Include="src\vendor\metronic\img\flags\sz.png" />
+    <Content Include="src\vendor\metronic\img\flags\tc.png" />
+    <Content Include="src\vendor\metronic\img\flags\td.png" />
+    <Content Include="src\vendor\metronic\img\flags\tf.png" />
+    <Content Include="src\vendor\metronic\img\flags\tg.png" />
+    <Content Include="src\vendor\metronic\img\flags\th.png" />
+    <Content Include="src\vendor\metronic\img\flags\tj.png" />
+    <Content Include="src\vendor\metronic\img\flags\tk.png" />
+    <Content Include="src\vendor\metronic\img\flags\tl.png" />
+    <Content Include="src\vendor\metronic\img\flags\tm.png" />
+    <Content Include="src\vendor\metronic\img\flags\tn.png" />
+    <Content Include="src\vendor\metronic\img\flags\to.png" />
+    <Content Include="src\vendor\metronic\img\flags\tr.png" />
+    <Content Include="src\vendor\metronic\img\flags\tt.png" />
+    <Content Include="src\vendor\metronic\img\flags\tv.png" />
+    <Content Include="src\vendor\metronic\img\flags\tw.png" />
+    <Content Include="src\vendor\metronic\img\flags\tz.png" />
+    <Content Include="src\vendor\metronic\img\flags\ua.png" />
+    <Content Include="src\vendor\metronic\img\flags\ug.png" />
+    <Content Include="src\vendor\metronic\img\flags\um.png" />
+    <Content Include="src\vendor\metronic\img\flags\us.png" />
+    <Content Include="src\vendor\metronic\img\flags\uy.png" />
+    <Content Include="src\vendor\metronic\img\flags\uz.png" />
+    <Content Include="src\vendor\metronic\img\flags\va.png" />
+    <Content Include="src\vendor\metronic\img\flags\vc.png" />
+    <Content Include="src\vendor\metronic\img\flags\ve.png" />
+    <Content Include="src\vendor\metronic\img\flags\vg.png" />
+    <Content Include="src\vendor\metronic\img\flags\vi.png" />
+    <Content Include="src\vendor\metronic\img\flags\vn.png" />
+    <Content Include="src\vendor\metronic\img\flags\vu.png" />
+    <Content Include="src\vendor\metronic\img\flags\wales.png" />
+    <Content Include="src\vendor\metronic\img\flags\wf.png" />
+    <Content Include="src\vendor\metronic\img\flags\ws.png" />
+    <Content Include="src\vendor\metronic\img\flags\ye.png" />
+    <Content Include="src\vendor\metronic\img\flags\yt.png" />
+    <Content Include="src\vendor\metronic\img\flags\za.png" />
+    <Content Include="src\vendor\metronic\img\flags\zm.png" />
+    <Content Include="src\vendor\metronic\img\flags\zw.png" />
+    <Content Include="src\vendor\metronic\img\input-spinner.gif" />
+    <Content Include="src\vendor\metronic\img\loading-spinner-blue.gif" />
+    <Content Include="src\vendor\metronic\img\loading-spinner-default.gif" />
+    <Content Include="src\vendor\metronic\img\loading-spinner-grey.gif" />
+    <Content Include="src\vendor\metronic\img\loading.gif" />
+    <Content Include="src\vendor\metronic\img\logo-big.png" />
+    <Content Include="src\vendor\metronic\img\overlay-icon.png" />
+    <Content Include="src\vendor\metronic\img\portlet-collapse-icon-white.png" />
+    <Content Include="src\vendor\metronic\img\portlet-collapse-icon.png" />
+    <Content Include="src\vendor\metronic\img\portlet-config-icon-white.png" />
+    <Content Include="src\vendor\metronic\img\portlet-config-icon.png" />
+    <Content Include="src\vendor\metronic\img\portlet-expand-icon-white.png" />
+    <Content Include="src\vendor\metronic\img\portlet-expand-icon.png" />
+    <Content Include="src\vendor\metronic\img\portlet-reload-icon-white.png" />
+    <Content Include="src\vendor\metronic\img\portlet-reload-icon.png" />
+    <Content Include="src\vendor\metronic\img\portlet-remove-icon-white.png" />
+    <Content Include="src\vendor\metronic\img\portlet-remove-icon.png" />
+    <Content Include="src\vendor\metronic\img\remove-icon-small.png" />
+    <Content Include="src\vendor\metronic\img\social\aboutme.png" />
+    <Content Include="src\vendor\metronic\img\social\amazon.png" />
+    <Content Include="src\vendor\metronic\img\social\behance.png" />
+    <Content Include="src\vendor\metronic\img\social\blogger.png" />
+    <Content Include="src\vendor\metronic\img\social\deviantart.png" />
+    <Content Include="src\vendor\metronic\img\social\dribbble.png" />
+    <Content Include="src\vendor\metronic\img\social\dropbox.png" />
+    <Content Include="src\vendor\metronic\img\social\evernote.png" />
+    <Content Include="src\vendor\metronic\img\social\facebook.png" />
+    <Content Include="src\vendor\metronic\img\social\flickr.png" />
+    <Content Include="src\vendor\metronic\img\social\forrst.png" />
+    <Content Include="src\vendor\metronic\img\social\foursquare.png" />
+    <Content Include="src\vendor\metronic\img\social\github.png" />
+    <Content Include="src\vendor\metronic\img\social\googleplus.png" />
+    <Content Include="src\vendor\metronic\img\social\gravatar.png" />
+    <Content Include="src\vendor\metronic\img\social\instagram.png" />
+    <Content Include="src\vendor\metronic\img\social\jolicloud.png" />
+    <Content Include="src\vendor\metronic\img\social\klout.png" />
+    <Content Include="src\vendor\metronic\img\social\last-fm.png" />
+    <Content Include="src\vendor\metronic\img\social\linkedin.png" />
+    <Content Include="src\vendor\metronic\img\social\myspace.png" />
+    <Content Include="src\vendor\metronic\img\social\picasa.png" />
+    <Content Include="src\vendor\metronic\img\social\pintrest.png" />
+    <Content Include="src\vendor\metronic\img\social\quora.png" />
+    <Content Include="src\vendor\metronic\img\social\reddit.png" />
+    <Content Include="src\vendor\metronic\img\social\rss.png" />
+    <Content Include="src\vendor\metronic\img\social\skype.png" />
+    <Content Include="src\vendor\metronic\img\social\spotify.png" />
+    <Content Include="src\vendor\metronic\img\social\stumbleupon.png" />
+    <Content Include="src\vendor\metronic\img\social\tumblr.png" />
+    <Content Include="src\vendor\metronic\img\social\twitter.png" />
+    <Content Include="src\vendor\metronic\img\social\vimeo.png" />
+    <Content Include="src\vendor\metronic\img\social\vk.png" />
+    <Content Include="src\vendor\metronic\img\social\wordpress.png" />
+    <Content Include="src\vendor\metronic\img\social\xing.png" />
+    <Content Include="src\vendor\metronic\img\social\yahoo.png" />
+    <Content Include="src\vendor\metronic\img\social\youtube.png" />
+    <Content Include="src\vendor\metronic\img\sprite.png" />
+    <Content Include="src\vendor\metronic\img\syncfusion-icons-white.png" />
+    <Content Include="src\vendor\metronic\img\syncfusion-icons.png" />
+    <Content Include="src\vendor\metronic\jquery-migrate.min.js" />
+    <Content Include="src\vendor\metronic\jquery-validation\js\jquery.validate.min.js" />
+    <Content Include="src\vendor\metronic\jquery.backstretch.min.js" />
+    <Content Include="src\vendor\metronic\jquery.blockui.min.js" />
+    <Content Include="src\vendor\metronic\jquery.cokie.min.js" />
+    <Content Include="src\vendor\metronic\jquery.uniform.min.js" />
+    <Content Include="src\vendor\metronic\layout.js" />
+    <Content Include="src\vendor\metronic\layout\css\custom.css" />
+    <Content Include="src\vendor\metronic\layout\css\layout.css" />
+    <Content Include="src\vendor\metronic\layout\css\themes\blue.css" />
+    <Content Include="src\vendor\metronic\layout\css\themes\darkblue.css" />
+    <Content Include="src\vendor\metronic\layout\css\themes\default.css" />
+    <Content Include="src\vendor\metronic\layout\css\themes\grey.css" />
+    <Content Include="src\vendor\metronic\layout\css\themes\light.css" />
+    <Content Include="src\vendor\metronic\layout\css\themes\light2.css" />
+    <Content Include="src\vendor\metronic\layout\css\themes\purple.css" />
+    <Content Include="src\vendor\metronic\layout\css\themes\wiki-blue.css" />
+    <Content Include="src\vendor\metronic\layout\img\ajax-loading.gif" />
+    <Content Include="src\vendor\metronic\layout\img\ajax-modal-loading.gif" />
+    <Content Include="src\vendor\metronic\layout\img\arrow-down.png" />
+    <Content Include="src\vendor\metronic\layout\img\avatar.png" />
+    <Content Include="src\vendor\metronic\layout\img\hor-menu-red-arrow.png" />
+    <Content Include="src\vendor\metronic\layout\img\icon-color-close.png" />
+    <Content Include="src\vendor\metronic\layout\img\icon-color.png" />
+    <Content Include="src\vendor\metronic\layout\img\icon-img-down.png" />
+    <Content Include="src\vendor\metronic\layout\img\icon-img-up.png" />
+    <Content Include="src\vendor\metronic\layout\img\inbox-nav-arrow-blue.png" />
+    <Content Include="src\vendor\metronic\layout\img\loading-spinner-blue.gif" />
+    <Content Include="src\vendor\metronic\layout\img\loading-spinner-default.gif" />
+    <Content Include="src\vendor\metronic\layout\img\loading-spinner-grey.gif" />
+    <Content Include="src\vendor\metronic\layout\img\loading.gif" />
+    <Content Include="src\vendor\metronic\layout\img\logo-big-white.png" />
+    <Content Include="src\vendor\metronic\layout\img\logo-big.png" />
+    <Content Include="src\vendor\metronic\layout\img\logo-invert.png" />
+    <Content Include="src\vendor\metronic\layout\img\logo.png" />
+    <Content Include="src\vendor\metronic\layout\img\menu-toggler.png" />
+    <Content Include="src\vendor\metronic\layout\img\remove-icon-small.png" />
+    <Content Include="src\vendor\metronic\layout\img\search_icon_light.png" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar-menu-arrow-reverse.png" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar-menu-arrow-right.png" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar-menu-arrow.png" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_arrow_icon_light.png" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_arrow_icon_light_rtl.png" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_inline_toggler_icon_blue.jpg" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_inline_toggler_icon_darkblue.jpg" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_inline_toggler_icon_default.jpg" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_inline_toggler_icon_grey.jpg" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_inline_toggler_icon_light.jpg" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_inline_toggler_icon_light2.jpg" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_toggler_icon_blue.png" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_toggler_icon_darkblue.png" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_toggler_icon_default.png" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_toggler_icon_grey.png" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_toggler_icon_light.png" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_toggler_icon_light2.png" />
+    <Content Include="src\vendor\metronic\layout\layout.js" />
+    <Content Include="src\vendor\metronic\layout\quick-sidebar.js" />
+    <Content Include="src\vendor\metronic\login-soft.js" />
+    <Content Include="src\vendor\metronic\metronic.js" />
+    <Content Include="src\vendor\metronic\select2.min.js" />
+    <Content Include="src\vendor\moment\moment.cn.js" />
+    <Content Include="src\vendor\moment\moment.min.js" />
+    <Content Include="src\widget\05992d3434d3589b38a3a5431842d38f.gif" />
+    <Content Include="src\widget\2165b99c89c8431e7165530ccb5f89fb.gif" />
+    <Content Include="src\widget\2194ed34eeab5926a0035ca7105e133c.png" />
+    <Content Include="src\widget\7b9776076d5fceef4993b55c9383dedd.gif" />
+    <Content Include="src\widget\9ed4669f524bec38319be63a2ee4ba26.gif" />
+    <Content Include="src\widget\c4642b7ba1e7e02c8ca235563a112e4a.png" />
+    <Content Include="src\widget\main.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wikitec.Application\Wikitec.Application.csproj">
+      <Project>{dfc28b70-d9ac-49f4-b5d9-44097cbf7f5e}</Project>
+      <Name>Wikitec.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wikitec.DataTransferObject\Wikitec.DataTransferObject.csproj">
+      <Project>{bb3d3f7d-3f36-4033-b6f6-77cfc066a6e7}</Project>
+      <Name>Wikitec.DataTransferObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wikitec.Domain\Wikitec.Domain.csproj">
+      <Project>{b5969854-98ed-4f9d-9a20-2fbe1ac00423}</Project>
+      <Name>Wikitec.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wikitec.Repository\Wikitec.Repository.csproj">
+      <Project>{6c845885-3763-489a-97e5-9f3b31c0de82}</Project>
+      <Name>Wikitec.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\plugin\datepicker\CHANGELOG.md" />
+    <Content Include="src\plugin\datepicker\less\datepicker.less" />
+    <Content Include="src\plugin\datepicker\less\datepicker3.less" />
+    <Content Include="src\plugin\datepicker\LICENSE" />
+    <Content Include="src\plugin\datepicker\README.md" />
+    <Content Include="src\plugin\icheck-1.x\.gitignore" />
+    <Content Include="src\plugin\icheck-1.x\bower.json" />
+    <Content Include="src\plugin\icheck-1.x\CHANGELOG.md" />
+    <Content Include="src\plugin\icheck-1.x\demo\css\custom.styl" />
+    <Content Include="src\plugin\icheck-1.x\demo\css\montserrat-bold.eot" />
+    <Content Include="src\plugin\icheck-1.x\demo\css\montserrat-bold.ttf" />
+    <Content Include="src\plugin\icheck-1.x\demo\css\montserrat-bold.woff" />
+    <Content Include="src\plugin\icheck-1.x\demo\css\montserrat-regular.eot" />
+    <Content Include="src\plugin\icheck-1.x\demo\css\montserrat-regular.ttf" />
+    <Content Include="src\plugin\icheck-1.x\demo\css\montserrat-regular.woff" />
+    <Content Include="src\plugin\icheck-1.x\icheck.jquery.json" />
+    <Content Include="src\plugin\icheck-1.x\README.md" />
+    <Content Include="src\plugin\jquery-file-upload\README.md" />
+    <Content Include="src\plugin\jquery-file-upload\server\gae-go\app.yaml" />
+    <Content Include="src\plugin\jquery-file-upload\server\gae-go\app\main.go" />
+    <Content Include="src\plugin\jquery-file-upload\server\gae-python\app.yaml" />
+    <Content Include="src\plugin\jquery-file-upload\server\gae-python\main.py" />
+    <Content Include="src\plugin\jquery-file-upload\server\node\.gitignore" />
+    <Content Include="src\plugin\jquery-file-upload\server\node\package.json" />
+    <Content Include="src\plugin\jquery-file-upload\server\node\public\files\.gitignore" />
+    <Content Include="src\plugin\jquery-file-upload\server\node\public\files\thumbnail\.gitignore" />
+    <Content Include="src\plugin\jquery-file-upload\server\node\tmp\.gitignore" />
+    <Content Include="src\plugin\jquery-file-upload\server\php\index.php" />
+    <Content Include="src\plugin\jquery-file-upload\server\php\UploadHandler.php" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\LICENSE" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\78-EUC-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\78-EUC-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\78-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\78-RKSJ-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\78-RKSJ-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\78-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\78ms-RKSJ-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\78ms-RKSJ-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\83pv-RKSJ-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\90ms-RKSJ-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\90ms-RKSJ-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\90msp-RKSJ-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\90msp-RKSJ-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\90pv-RKSJ-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\90pv-RKSJ-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Add-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Add-RKSJ-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Add-RKSJ-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Add-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-CNS1-0.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-CNS1-1.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-CNS1-2.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-CNS1-3.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-CNS1-4.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-CNS1-5.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-CNS1-6.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-CNS1-UCS2.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-GB1-0.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-GB1-1.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-GB1-2.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-GB1-3.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-GB1-4.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-GB1-5.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-GB1-UCS2.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-Japan1-0.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-Japan1-1.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-Japan1-2.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-Japan1-3.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-Japan1-4.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-Japan1-5.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-Japan1-6.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-Japan1-UCS2.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-Korea1-0.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-Korea1-1.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-Korea1-2.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Adobe-Korea1-UCS2.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\B5-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\B5-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\B5pc-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\B5pc-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\CNS-EUC-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\CNS-EUC-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\CNS1-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\CNS1-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\CNS2-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\CNS2-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\ETen-B5-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\ETen-B5-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\ETenms-B5-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\ETenms-B5-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\ETHK-B5-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\ETHK-B5-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\EUC-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\EUC-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Ext-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Ext-RKSJ-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Ext-RKSJ-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Ext-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\GB-EUC-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\GB-EUC-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\GB-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\GB-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\GBK-EUC-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\GBK-EUC-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\GBK2K-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\GBK2K-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\GBKp-EUC-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\GBKp-EUC-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\GBpc-EUC-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\GBpc-EUC-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\GBT-EUC-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\GBT-EUC-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\GBT-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\GBT-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\GBTpc-EUC-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\GBTpc-EUC-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Hankaku.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Hiragana.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\HKdla-B5-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\HKdla-B5-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\HKdlb-B5-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\HKdlb-B5-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\HKgccs-B5-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\HKgccs-B5-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\HKm314-B5-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\HKm314-B5-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\HKm471-B5-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\HKm471-B5-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\HKscs-B5-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\HKscs-B5-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Katakana.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\KSC-EUC-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\KSC-EUC-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\KSC-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\KSC-Johab-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\KSC-Johab-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\KSC-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\KSCms-UHC-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\KSCms-UHC-HW-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\KSCms-UHC-HW-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\KSCms-UHC-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\KSCpc-EUC-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\KSCpc-EUC-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\LICENSE" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\NWP-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\NWP-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\RKSJ-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\RKSJ-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\Roman.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniCNS-UCS2-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniCNS-UCS2-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniCNS-UTF16-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniCNS-UTF16-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniCNS-UTF32-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniCNS-UTF32-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniCNS-UTF8-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniCNS-UTF8-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniGB-UCS2-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniGB-UCS2-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniGB-UTF16-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniGB-UTF16-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniGB-UTF32-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniGB-UTF32-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniGB-UTF8-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniGB-UTF8-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJIS-UCS2-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJIS-UCS2-HW-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJIS-UCS2-HW-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJIS-UCS2-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJIS-UTF16-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJIS-UTF16-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJIS-UTF32-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJIS-UTF32-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJIS-UTF8-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJIS-UTF8-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJIS2004-UTF16-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJIS2004-UTF16-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJIS2004-UTF32-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJIS2004-UTF32-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJIS2004-UTF8-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJIS2004-UTF8-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJISPro-UCS2-HW-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJISPro-UCS2-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJISPro-UTF8-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJISX0213-UTF32-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJISX0213-UTF32-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJISX02132004-UTF32-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniJISX02132004-UTF32-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniKS-UCS2-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniKS-UCS2-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniKS-UTF16-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniKS-UTF16-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniKS-UTF32-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniKS-UTF32-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniKS-UTF8-H.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\UniKS-UTF8-V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\V.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\cmaps\WP-Symbol.bcmap" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\compressed.tracemonkey-pldi-09.pdf" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\ach\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\af\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\ak\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\an\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\ar\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\ast\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\as\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\az\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\be\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\bg\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\bn-BD\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\bn-IN\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\br\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\bs\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\ca\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\csb\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\cs\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\cy\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\da\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\de\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\el\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\en-GB\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\en-US\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\en-ZA\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\eo\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\es-AR\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\es-CL\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\es-ES\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\es-MX\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\et\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\eu\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\fa\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\ff\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\fi\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\fr\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\fy-NL\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\ga-IE\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\gd\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\gl\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\gu-IN\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\he\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\hi-IN\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\hr\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\hu\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\hy-AM\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\id\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\is\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\it\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\ja\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\ka\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\kk\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\km\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\kn\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\ko\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\ku\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\lg\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\lij\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\locale.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\lt\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\lv\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\mai\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\mk\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\ml\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\mn\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\mr\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\ms\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\my\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\nb-NO\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\nl\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\nn-NO\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\nso\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\oc\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\or\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\pa-IN\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\pl\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\pt-BR\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\pt-PT\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\rm\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\ro\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\ru\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\rw\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\sah\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\si\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\sk\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\sl\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\son\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\sq\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\sr\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\sv-SE\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\sw\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\ta-LK\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\ta\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\te\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\th\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\tl\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\tn\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\tr\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\uk\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\ur\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\vi\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\wo\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\xh\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\zh-CN\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\zh-TW\viewer.properties" />
+    <Content Include="src\plugin\pdfjs-1.1.114-dist\web\locale\zu\viewer.properties" />
+    <Content Include="src\static\css\bootstrap.css.map" />
+    <Content Include="src\static\fonts\fontawesome-webfont.eot" />
+    <Content Include="src\static\fonts\fontawesome-webfont.ttf" />
+    <Content Include="src\static\fonts\fontawesome-webfont.woff" />
+    <Content Include="src\static\fonts\FontAwesome.otf" />
+    <Content Include="src\static\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="src\static\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="src\static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="src\static\fonts\Simple-Line-Icons.eot" />
+    <Content Include="src\static\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="src\static\fonts\Simple-Line-Icons.woff" />
+    <Content Include="src\vendor\metronic\fonts\fontawesome-webfont.ttf" />
+    <Content Include="src\vendor\metronic\fonts\fontawesome-webfont.woff" />
+    <Content Include="src\vendor\metronic\img\social\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Error.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Unauthorized.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51047/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

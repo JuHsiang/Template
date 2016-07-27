@@ -1,0 +1,702 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8361EEA1-975B-4114-874F-19CEF45C3B5D}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web.Portal</RootNamespace>
+    <AssemblyName>Web.Portal</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Wikitec.Infrastructure\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\Wikitec.Infrastructure\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\packages\Wikitec.Infrastructure\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Wikitec.Infrastructure\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\packages\Wikitec.Infrastructure\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration">
+      <HintPath>..\packages\Wikitec.Infrastructure\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
+      <HintPath>..\packages\Wikitec.Infrastructure\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>..\packages\Wikitec.Infrastructure\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Wikitec.Infrastructure">
+      <HintPath>..\packages\Wikitec.Infrastructure\Wikitec.Infrastructure.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ListOptionsController.cs" />
+    <Compile Include="Controllers\SysRoleController.cs" />
+    <Compile Include="Controllers\SysUsersController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Toolkits\AppSession.cs" />
+    <Compile Include="Toolkits\AuthorizeHelper.cs" />
+    <Compile Include="Toolkits\JsonContentNegotiator.cs" />
+    <Compile Include="Toolkits\UserIdentity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="App_Start\WebApiConfig.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Content>
+    <Content Include="src\app\account\service.js" />
+    <Content Include="src\app\config\option\index.html" />
+    <Content Include="src\app\config\option\index.js" />
+    <Content Include="src\app\config\option\service.js" />
+    <Content Include="src\app\head.html" />
+    <Content Include="src\app\home\index.html" />
+    <Content Include="src\app\home\index.js" />
+    <Content Include="src\app\home\service.js" />
+    <Content Include="src\app\sidemenu.html" />
+    <Content Include="src\app\sys\role\index.html" />
+    <Content Include="src\app\sys\role\index.js" />
+    <Content Include="src\app\sys\role\service.js" />
+    <Content Include="src\app\sys\user\index.html" />
+    <Content Include="src\app\sys\user\index.js" />
+    <Content Include="src\app\sys\user\service.js" />
+    <Content Include="src\global.js" />
+    <Content Include="src\main.js" />
+    <Content Include="src\plugin\bootstrap-hover-dropdown.min.js" />
+    <Content Include="src\plugin\bootstrap.wizard.min.js" />
+    <Content Include="src\plugin\jquery-ui-custom.js" />
+    <Content Include="src\plugin\jquery.blockui.min.js" />
+    <Content Include="src\plugin\jquery.slimscroll.min.js" />
+    <Content Include="src\plugin\jquery.ui.widget.js" />
+    <Content Include="src\plugin\jquery.validate.min.js" />
+    <Content Include="src\plugin\jscharts.js" />
+    <Content Include="src\plugin\jstree\jstree.js" />
+    <Content Include="src\plugin\jstree\jstree.min.js" />
+    <Content Include="src\plugin\jstree\themes\default\32px.png" />
+    <Content Include="src\plugin\jstree\themes\default\32px_line.png" />
+    <Content Include="src\plugin\jstree\themes\default\32px_original.png" />
+    <Content Include="src\plugin\jstree\themes\default\40px.png" />
+    <Content Include="src\plugin\jstree\themes\default\style.css" />
+    <Content Include="src\plugin\jstree\themes\default\style.min.css" />
+    <Content Include="src\plugin\jstree\themes\default\throbber.gif" />
+    <Content Include="src\plugin\mCustomScrollbar\jquery.mCustomScrollbar.css" />
+    <Content Include="src\plugin\mCustomScrollbar\jquery.mCustomScrollbar.min.js" />
+    <Content Include="src\plugin\mCustomScrollbar\jquery.mousewheel.min.js" />
+    <Content Include="src\plugin\spectrum\css.css" />
+    <Content Include="src\plugin\spectrum\js.js" />
+    <Content Include="src\plugin\store.min.js" />
+    <Content Include="src\plugin\toastr\toastr.min.css" />
+    <Content Include="src\plugin\toastr\toastr.min.js" />
+    <Content Include="src\plugin\xdate.js" />
+    <Content Include="src\route.js" />
+    <Content Include="src\static\401.html" />
+    <Content Include="src\static\403.html" />
+    <Content Include="src\static\404.html" />
+    <Content Include="src\static\500.html" />
+    <Content Include="src\static\css\custom.css" />
+    <Content Include="src\static\img\archivePhoto.jpg" />
+    <Content Include="src\static\img\avatar.png" />
+    <Content Include="src\static\img\birthday.png" />
+    <Content Include="src\static\img\girl.jpg" />
+    <Content Include="src\static\img\noFile.jpg" />
+    <Content Include="src\static\img\u789.png" />
+    <Content Include="src\static\img\user.jpg" />
+    <Content Include="src\util\ajaxGlobal.js" />
+    <Content Include="src\util\animate.js" />
+    <Content Include="src\util\config.js" />
+    <Content Include="src\util\dateUtil.js" />
+    <Content Include="src\util\message.js" />
+    <Content Include="src\util\pager.js" />
+    <Content Include="src\util\stringUtil.js" />
+    <Content Include="src\util\tab.js" />
+    <Content Include="src\util\urlUtil.js" />
+    <Content Include="src\util\validator.js" />
+    <Content Include="src\vendor\amcharts.js" />
+    <Content Include="src\vendor\bootstrap.js" />
+    <Content Include="src\vendor\jquery.js" />
+    <Content Include="src\vendor\jquery.linq.min.js" />
+    <Content Include="src\vendor\lodash.js" />
+    <Content Include="src\vendor\metronic\backstretch\jquery.backstretch.min.js" />
+    <Content Include="src\vendor\metronic\img\1.jpg" />
+    <Content Include="src\vendor\metronic\img\2.jpg" />
+    <Content Include="src\vendor\metronic\img\3.jpg" />
+    <Content Include="src\vendor\metronic\img\4.jpg" />
+    <Content Include="src\vendor\metronic\img\accordion-plusminus.png" />
+    <Content Include="src\vendor\metronic\img\ajax-loading.gif" />
+    <Content Include="src\vendor\metronic\img\ajax-modal-loading.gif" />
+    <Content Include="src\vendor\metronic\img\bg-white-lock.png" />
+    <Content Include="src\vendor\metronic\img\datatable-row-openclose.png" />
+    <Content Include="src\vendor\metronic\img\flags\ad.png" />
+    <Content Include="src\vendor\metronic\img\flags\ae.png" />
+    <Content Include="src\vendor\metronic\img\flags\af.png" />
+    <Content Include="src\vendor\metronic\img\flags\ag.png" />
+    <Content Include="src\vendor\metronic\img\flags\ai.png" />
+    <Content Include="src\vendor\metronic\img\flags\al.png" />
+    <Content Include="src\vendor\metronic\img\flags\am.png" />
+    <Content Include="src\vendor\metronic\img\flags\an.png" />
+    <Content Include="src\vendor\metronic\img\flags\ao.png" />
+    <Content Include="src\vendor\metronic\img\flags\ar.png" />
+    <Content Include="src\vendor\metronic\img\flags\as.png" />
+    <Content Include="src\vendor\metronic\img\flags\at.png" />
+    <Content Include="src\vendor\metronic\img\flags\au.png" />
+    <Content Include="src\vendor\metronic\img\flags\aw.png" />
+    <Content Include="src\vendor\metronic\img\flags\ax.png" />
+    <Content Include="src\vendor\metronic\img\flags\az.png" />
+    <Content Include="src\vendor\metronic\img\flags\ba.png" />
+    <Content Include="src\vendor\metronic\img\flags\bb.png" />
+    <Content Include="src\vendor\metronic\img\flags\bd.png" />
+    <Content Include="src\vendor\metronic\img\flags\be.png" />
+    <Content Include="src\vendor\metronic\img\flags\bf.png" />
+    <Content Include="src\vendor\metronic\img\flags\bg.png" />
+    <Content Include="src\vendor\metronic\img\flags\bh.png" />
+    <Content Include="src\vendor\metronic\img\flags\bi.png" />
+    <Content Include="src\vendor\metronic\img\flags\bj.png" />
+    <Content Include="src\vendor\metronic\img\flags\bm.png" />
+    <Content Include="src\vendor\metronic\img\flags\bn.png" />
+    <Content Include="src\vendor\metronic\img\flags\bo.png" />
+    <Content Include="src\vendor\metronic\img\flags\br.png" />
+    <Content Include="src\vendor\metronic\img\flags\bs.png" />
+    <Content Include="src\vendor\metronic\img\flags\bt.png" />
+    <Content Include="src\vendor\metronic\img\flags\bv.png" />
+    <Content Include="src\vendor\metronic\img\flags\bw.png" />
+    <Content Include="src\vendor\metronic\img\flags\by.png" />
+    <Content Include="src\vendor\metronic\img\flags\bz.png" />
+    <Content Include="src\vendor\metronic\img\flags\ca.png" />
+    <Content Include="src\vendor\metronic\img\flags\catalonia.png" />
+    <Content Include="src\vendor\metronic\img\flags\cc.png" />
+    <Content Include="src\vendor\metronic\img\flags\cd.png" />
+    <Content Include="src\vendor\metronic\img\flags\cf.png" />
+    <Content Include="src\vendor\metronic\img\flags\cg.png" />
+    <Content Include="src\vendor\metronic\img\flags\ch.png" />
+    <Content Include="src\vendor\metronic\img\flags\ci.png" />
+    <Content Include="src\vendor\metronic\img\flags\ck.png" />
+    <Content Include="src\vendor\metronic\img\flags\cl.png" />
+    <Content Include="src\vendor\metronic\img\flags\cm.png" />
+    <Content Include="src\vendor\metronic\img\flags\cn.png" />
+    <Content Include="src\vendor\metronic\img\flags\co.png" />
+    <Content Include="src\vendor\metronic\img\flags\cr.png" />
+    <Content Include="src\vendor\metronic\img\flags\cs.png" />
+    <Content Include="src\vendor\metronic\img\flags\cu.png" />
+    <Content Include="src\vendor\metronic\img\flags\cv.png" />
+    <Content Include="src\vendor\metronic\img\flags\cx.png" />
+    <Content Include="src\vendor\metronic\img\flags\cy.png" />
+    <Content Include="src\vendor\metronic\img\flags\cz.png" />
+    <Content Include="src\vendor\metronic\img\flags\de.png" />
+    <Content Include="src\vendor\metronic\img\flags\dj.png" />
+    <Content Include="src\vendor\metronic\img\flags\dk.png" />
+    <Content Include="src\vendor\metronic\img\flags\dm.png" />
+    <Content Include="src\vendor\metronic\img\flags\do.png" />
+    <Content Include="src\vendor\metronic\img\flags\dz.png" />
+    <Content Include="src\vendor\metronic\img\flags\ec.png" />
+    <Content Include="src\vendor\metronic\img\flags\ee.png" />
+    <Content Include="src\vendor\metronic\img\flags\eg.png" />
+    <Content Include="src\vendor\metronic\img\flags\eh.png" />
+    <Content Include="src\vendor\metronic\img\flags\england.png" />
+    <Content Include="src\vendor\metronic\img\flags\er.png" />
+    <Content Include="src\vendor\metronic\img\flags\es.png" />
+    <Content Include="src\vendor\metronic\img\flags\et.png" />
+    <Content Include="src\vendor\metronic\img\flags\europeanunion.png" />
+    <Content Include="src\vendor\metronic\img\flags\fam.png" />
+    <Content Include="src\vendor\metronic\img\flags\fi.png" />
+    <Content Include="src\vendor\metronic\img\flags\fj.png" />
+    <Content Include="src\vendor\metronic\img\flags\fk.png" />
+    <Content Include="src\vendor\metronic\img\flags\fm.png" />
+    <Content Include="src\vendor\metronic\img\flags\fo.png" />
+    <Content Include="src\vendor\metronic\img\flags\fr.png" />
+    <Content Include="src\vendor\metronic\img\flags\ga.png" />
+    <Content Include="src\vendor\metronic\img\flags\gb.png" />
+    <Content Include="src\vendor\metronic\img\flags\gd.png" />
+    <Content Include="src\vendor\metronic\img\flags\ge.png" />
+    <Content Include="src\vendor\metronic\img\flags\gf.png" />
+    <Content Include="src\vendor\metronic\img\flags\gh.png" />
+    <Content Include="src\vendor\metronic\img\flags\gi.png" />
+    <Content Include="src\vendor\metronic\img\flags\gl.png" />
+    <Content Include="src\vendor\metronic\img\flags\gm.png" />
+    <Content Include="src\vendor\metronic\img\flags\gn.png" />
+    <Content Include="src\vendor\metronic\img\flags\gp.png" />
+    <Content Include="src\vendor\metronic\img\flags\gq.png" />
+    <Content Include="src\vendor\metronic\img\flags\gr.png" />
+    <Content Include="src\vendor\metronic\img\flags\gs.png" />
+    <Content Include="src\vendor\metronic\img\flags\gt.png" />
+    <Content Include="src\vendor\metronic\img\flags\gu.png" />
+    <Content Include="src\vendor\metronic\img\flags\gw.png" />
+    <Content Include="src\vendor\metronic\img\flags\gy.png" />
+    <Content Include="src\vendor\metronic\img\flags\hk.png" />
+    <Content Include="src\vendor\metronic\img\flags\hm.png" />
+    <Content Include="src\vendor\metronic\img\flags\hn.png" />
+    <Content Include="src\vendor\metronic\img\flags\hr.png" />
+    <Content Include="src\vendor\metronic\img\flags\ht.png" />
+    <Content Include="src\vendor\metronic\img\flags\hu.png" />
+    <Content Include="src\vendor\metronic\img\flags\id.png" />
+    <Content Include="src\vendor\metronic\img\flags\ie.png" />
+    <Content Include="src\vendor\metronic\img\flags\il.png" />
+    <Content Include="src\vendor\metronic\img\flags\in.png" />
+    <Content Include="src\vendor\metronic\img\flags\io.png" />
+    <Content Include="src\vendor\metronic\img\flags\iq.png" />
+    <Content Include="src\vendor\metronic\img\flags\ir.png" />
+    <Content Include="src\vendor\metronic\img\flags\is.png" />
+    <Content Include="src\vendor\metronic\img\flags\it.png" />
+    <Content Include="src\vendor\metronic\img\flags\jm.png" />
+    <Content Include="src\vendor\metronic\img\flags\jo.png" />
+    <Content Include="src\vendor\metronic\img\flags\jp.png" />
+    <Content Include="src\vendor\metronic\img\flags\ke.png" />
+    <Content Include="src\vendor\metronic\img\flags\kg.png" />
+    <Content Include="src\vendor\metronic\img\flags\kh.png" />
+    <Content Include="src\vendor\metronic\img\flags\ki.png" />
+    <Content Include="src\vendor\metronic\img\flags\km.png" />
+    <Content Include="src\vendor\metronic\img\flags\kn.png" />
+    <Content Include="src\vendor\metronic\img\flags\kp.png" />
+    <Content Include="src\vendor\metronic\img\flags\kr.png" />
+    <Content Include="src\vendor\metronic\img\flags\kw.png" />
+    <Content Include="src\vendor\metronic\img\flags\ky.png" />
+    <Content Include="src\vendor\metronic\img\flags\kz.png" />
+    <Content Include="src\vendor\metronic\img\flags\la.png" />
+    <Content Include="src\vendor\metronic\img\flags\lb.png" />
+    <Content Include="src\vendor\metronic\img\flags\lc.png" />
+    <Content Include="src\vendor\metronic\img\flags\li.png" />
+    <Content Include="src\vendor\metronic\img\flags\lk.png" />
+    <Content Include="src\vendor\metronic\img\flags\lr.png" />
+    <Content Include="src\vendor\metronic\img\flags\ls.png" />
+    <Content Include="src\vendor\metronic\img\flags\lt.png" />
+    <Content Include="src\vendor\metronic\img\flags\lu.png" />
+    <Content Include="src\vendor\metronic\img\flags\lv.png" />
+    <Content Include="src\vendor\metronic\img\flags\ly.png" />
+    <Content Include="src\vendor\metronic\img\flags\ma.png" />
+    <Content Include="src\vendor\metronic\img\flags\mc.png" />
+    <Content Include="src\vendor\metronic\img\flags\md.png" />
+    <Content Include="src\vendor\metronic\img\flags\me.png" />
+    <Content Include="src\vendor\metronic\img\flags\mg.png" />
+    <Content Include="src\vendor\metronic\img\flags\mh.png" />
+    <Content Include="src\vendor\metronic\img\flags\mk.png" />
+    <Content Include="src\vendor\metronic\img\flags\ml.png" />
+    <Content Include="src\vendor\metronic\img\flags\mm.png" />
+    <Content Include="src\vendor\metronic\img\flags\mn.png" />
+    <Content Include="src\vendor\metronic\img\flags\mo.png" />
+    <Content Include="src\vendor\metronic\img\flags\mp.png" />
+    <Content Include="src\vendor\metronic\img\flags\mq.png" />
+    <Content Include="src\vendor\metronic\img\flags\mr.png" />
+    <Content Include="src\vendor\metronic\img\flags\ms.png" />
+    <Content Include="src\vendor\metronic\img\flags\mt.png" />
+    <Content Include="src\vendor\metronic\img\flags\mu.png" />
+    <Content Include="src\vendor\metronic\img\flags\mv.png" />
+    <Content Include="src\vendor\metronic\img\flags\mw.png" />
+    <Content Include="src\vendor\metronic\img\flags\mx.png" />
+    <Content Include="src\vendor\metronic\img\flags\my.png" />
+    <Content Include="src\vendor\metronic\img\flags\mz.png" />
+    <Content Include="src\vendor\metronic\img\flags\na.png" />
+    <Content Include="src\vendor\metronic\img\flags\nc.png" />
+    <Content Include="src\vendor\metronic\img\flags\ne.png" />
+    <Content Include="src\vendor\metronic\img\flags\nf.png" />
+    <Content Include="src\vendor\metronic\img\flags\ng.png" />
+    <Content Include="src\vendor\metronic\img\flags\ni.png" />
+    <Content Include="src\vendor\metronic\img\flags\nl.png" />
+    <Content Include="src\vendor\metronic\img\flags\no.png" />
+    <Content Include="src\vendor\metronic\img\flags\np.png" />
+    <Content Include="src\vendor\metronic\img\flags\nr.png" />
+    <Content Include="src\vendor\metronic\img\flags\nu.png" />
+    <Content Include="src\vendor\metronic\img\flags\nz.png" />
+    <Content Include="src\vendor\metronic\img\flags\om.png" />
+    <Content Include="src\vendor\metronic\img\flags\pa.png" />
+    <Content Include="src\vendor\metronic\img\flags\pe.png" />
+    <Content Include="src\vendor\metronic\img\flags\pf.png" />
+    <Content Include="src\vendor\metronic\img\flags\pg.png" />
+    <Content Include="src\vendor\metronic\img\flags\ph.png" />
+    <Content Include="src\vendor\metronic\img\flags\pk.png" />
+    <Content Include="src\vendor\metronic\img\flags\pl.png" />
+    <Content Include="src\vendor\metronic\img\flags\pm.png" />
+    <Content Include="src\vendor\metronic\img\flags\pn.png" />
+    <Content Include="src\vendor\metronic\img\flags\pr.png" />
+    <Content Include="src\vendor\metronic\img\flags\ps.png" />
+    <Content Include="src\vendor\metronic\img\flags\pt.png" />
+    <Content Include="src\vendor\metronic\img\flags\pw.png" />
+    <Content Include="src\vendor\metronic\img\flags\py.png" />
+    <Content Include="src\vendor\metronic\img\flags\qa.png" />
+    <Content Include="src\vendor\metronic\img\flags\re.png" />
+    <Content Include="src\vendor\metronic\img\flags\readme.txt" />
+    <Content Include="src\vendor\metronic\img\flags\ro.png" />
+    <Content Include="src\vendor\metronic\img\flags\rs.png" />
+    <Content Include="src\vendor\metronic\img\flags\ru.png" />
+    <Content Include="src\vendor\metronic\img\flags\rw.png" />
+    <Content Include="src\vendor\metronic\img\flags\sa.png" />
+    <Content Include="src\vendor\metronic\img\flags\sb.png" />
+    <Content Include="src\vendor\metronic\img\flags\sc.png" />
+    <Content Include="src\vendor\metronic\img\flags\scotland.png" />
+    <Content Include="src\vendor\metronic\img\flags\sd.png" />
+    <Content Include="src\vendor\metronic\img\flags\se.png" />
+    <Content Include="src\vendor\metronic\img\flags\sg.png" />
+    <Content Include="src\vendor\metronic\img\flags\sh.png" />
+    <Content Include="src\vendor\metronic\img\flags\si.png" />
+    <Content Include="src\vendor\metronic\img\flags\sj.png" />
+    <Content Include="src\vendor\metronic\img\flags\sk.png" />
+    <Content Include="src\vendor\metronic\img\flags\sl.png" />
+    <Content Include="src\vendor\metronic\img\flags\sm.png" />
+    <Content Include="src\vendor\metronic\img\flags\sn.png" />
+    <Content Include="src\vendor\metronic\img\flags\so.png" />
+    <Content Include="src\vendor\metronic\img\flags\sr.png" />
+    <Content Include="src\vendor\metronic\img\flags\st.png" />
+    <Content Include="src\vendor\metronic\img\flags\sv.png" />
+    <Content Include="src\vendor\metronic\img\flags\sy.png" />
+    <Content Include="src\vendor\metronic\img\flags\sz.png" />
+    <Content Include="src\vendor\metronic\img\flags\tc.png" />
+    <Content Include="src\vendor\metronic\img\flags\td.png" />
+    <Content Include="src\vendor\metronic\img\flags\tf.png" />
+    <Content Include="src\vendor\metronic\img\flags\tg.png" />
+    <Content Include="src\vendor\metronic\img\flags\th.png" />
+    <Content Include="src\vendor\metronic\img\flags\tj.png" />
+    <Content Include="src\vendor\metronic\img\flags\tk.png" />
+    <Content Include="src\vendor\metronic\img\flags\tl.png" />
+    <Content Include="src\vendor\metronic\img\flags\tm.png" />
+    <Content Include="src\vendor\metronic\img\flags\tn.png" />
+    <Content Include="src\vendor\metronic\img\flags\to.png" />
+    <Content Include="src\vendor\metronic\img\flags\tr.png" />
+    <Content Include="src\vendor\metronic\img\flags\tt.png" />
+    <Content Include="src\vendor\metronic\img\flags\tv.png" />
+    <Content Include="src\vendor\metronic\img\flags\tw.png" />
+    <Content Include="src\vendor\metronic\img\flags\tz.png" />
+    <Content Include="src\vendor\metronic\img\flags\ua.png" />
+    <Content Include="src\vendor\metronic\img\flags\ug.png" />
+    <Content Include="src\vendor\metronic\img\flags\um.png" />
+    <Content Include="src\vendor\metronic\img\flags\us.png" />
+    <Content Include="src\vendor\metronic\img\flags\uy.png" />
+    <Content Include="src\vendor\metronic\img\flags\uz.png" />
+    <Content Include="src\vendor\metronic\img\flags\va.png" />
+    <Content Include="src\vendor\metronic\img\flags\vc.png" />
+    <Content Include="src\vendor\metronic\img\flags\ve.png" />
+    <Content Include="src\vendor\metronic\img\flags\vg.png" />
+    <Content Include="src\vendor\metronic\img\flags\vi.png" />
+    <Content Include="src\vendor\metronic\img\flags\vn.png" />
+    <Content Include="src\vendor\metronic\img\flags\vu.png" />
+    <Content Include="src\vendor\metronic\img\flags\wales.png" />
+    <Content Include="src\vendor\metronic\img\flags\wf.png" />
+    <Content Include="src\vendor\metronic\img\flags\ws.png" />
+    <Content Include="src\vendor\metronic\img\flags\ye.png" />
+    <Content Include="src\vendor\metronic\img\flags\yt.png" />
+    <Content Include="src\vendor\metronic\img\flags\za.png" />
+    <Content Include="src\vendor\metronic\img\flags\zm.png" />
+    <Content Include="src\vendor\metronic\img\flags\zw.png" />
+    <Content Include="src\vendor\metronic\img\input-spinner.gif" />
+    <Content Include="src\vendor\metronic\img\loading-spinner-blue.gif" />
+    <Content Include="src\vendor\metronic\img\loading-spinner-default.gif" />
+    <Content Include="src\vendor\metronic\img\loading-spinner-grey.gif" />
+    <Content Include="src\vendor\metronic\img\loading.gif" />
+    <Content Include="src\vendor\metronic\img\logo-big.png" />
+    <Content Include="src\vendor\metronic\img\overlay-icon.png" />
+    <Content Include="src\vendor\metronic\img\portlet-collapse-icon-white.png" />
+    <Content Include="src\vendor\metronic\img\portlet-collapse-icon.png" />
+    <Content Include="src\vendor\metronic\img\portlet-config-icon-white.png" />
+    <Content Include="src\vendor\metronic\img\portlet-config-icon.png" />
+    <Content Include="src\vendor\metronic\img\portlet-expand-icon-white.png" />
+    <Content Include="src\vendor\metronic\img\portlet-expand-icon.png" />
+    <Content Include="src\vendor\metronic\img\portlet-reload-icon-white.png" />
+    <Content Include="src\vendor\metronic\img\portlet-reload-icon.png" />
+    <Content Include="src\vendor\metronic\img\portlet-remove-icon-white.png" />
+    <Content Include="src\vendor\metronic\img\portlet-remove-icon.png" />
+    <Content Include="src\vendor\metronic\img\remove-icon-small.png" />
+    <Content Include="src\vendor\metronic\img\social\aboutme.png" />
+    <Content Include="src\vendor\metronic\img\social\amazon.png" />
+    <Content Include="src\vendor\metronic\img\social\behance.png" />
+    <Content Include="src\vendor\metronic\img\social\blogger.png" />
+    <Content Include="src\vendor\metronic\img\social\deviantart.png" />
+    <Content Include="src\vendor\metronic\img\social\dribbble.png" />
+    <Content Include="src\vendor\metronic\img\social\dropbox.png" />
+    <Content Include="src\vendor\metronic\img\social\evernote.png" />
+    <Content Include="src\vendor\metronic\img\social\facebook.png" />
+    <Content Include="src\vendor\metronic\img\social\flickr.png" />
+    <Content Include="src\vendor\metronic\img\social\forrst.png" />
+    <Content Include="src\vendor\metronic\img\social\foursquare.png" />
+    <Content Include="src\vendor\metronic\img\social\github.png" />
+    <Content Include="src\vendor\metronic\img\social\googleplus.png" />
+    <Content Include="src\vendor\metronic\img\social\gravatar.png" />
+    <Content Include="src\vendor\metronic\img\social\instagram.png" />
+    <Content Include="src\vendor\metronic\img\social\jolicloud.png" />
+    <Content Include="src\vendor\metronic\img\social\klout.png" />
+    <Content Include="src\vendor\metronic\img\social\last-fm.png" />
+    <Content Include="src\vendor\metronic\img\social\linkedin.png" />
+    <Content Include="src\vendor\metronic\img\social\myspace.png" />
+    <Content Include="src\vendor\metronic\img\social\picasa.png" />
+    <Content Include="src\vendor\metronic\img\social\pintrest.png" />
+    <Content Include="src\vendor\metronic\img\social\quora.png" />
+    <Content Include="src\vendor\metronic\img\social\reddit.png" />
+    <Content Include="src\vendor\metronic\img\social\rss.png" />
+    <Content Include="src\vendor\metronic\img\social\skype.png" />
+    <Content Include="src\vendor\metronic\img\social\spotify.png" />
+    <Content Include="src\vendor\metronic\img\social\stumbleupon.png" />
+    <Content Include="src\vendor\metronic\img\social\tumblr.png" />
+    <Content Include="src\vendor\metronic\img\social\twitter.png" />
+    <Content Include="src\vendor\metronic\img\social\vimeo.png" />
+    <Content Include="src\vendor\metronic\img\social\vk.png" />
+    <Content Include="src\vendor\metronic\img\social\wordpress.png" />
+    <Content Include="src\vendor\metronic\img\social\xing.png" />
+    <Content Include="src\vendor\metronic\img\social\yahoo.png" />
+    <Content Include="src\vendor\metronic\img\social\youtube.png" />
+    <Content Include="src\vendor\metronic\img\sprite.png" />
+    <Content Include="src\vendor\metronic\img\syncfusion-icons-white.png" />
+    <Content Include="src\vendor\metronic\img\syncfusion-icons.png" />
+    <Content Include="src\vendor\metronic\jquery.blockui.min.js" />
+    <Content Include="src\vendor\metronic\jquery.cokie.min.js" />
+    <Content Include="src\vendor\metronic\jquery.uniform.min.js" />
+    <Content Include="src\vendor\metronic\layout\css\custom.css" />
+    <Content Include="src\vendor\metronic\layout\css\layout.css" />
+    <Content Include="src\vendor\metronic\layout\css\themes\blue.css" />
+    <Content Include="src\vendor\metronic\layout\css\themes\darkblue.css" />
+    <Content Include="src\vendor\metronic\layout\css\themes\default.css" />
+    <Content Include="src\vendor\metronic\layout\css\themes\grey.css" />
+    <Content Include="src\vendor\metronic\layout\css\themes\light.css" />
+    <Content Include="src\vendor\metronic\layout\css\themes\light2.css" />
+    <Content Include="src\vendor\metronic\layout\css\themes\purple.css" />
+    <Content Include="src\vendor\metronic\layout\css\themes\wiki-blue.css" />
+    <Content Include="src\vendor\metronic\layout\img\ajax-loading.gif" />
+    <Content Include="src\vendor\metronic\layout\img\ajax-modal-loading.gif" />
+    <Content Include="src\vendor\metronic\layout\img\arrow-down.png" />
+    <Content Include="src\vendor\metronic\layout\img\avatar.png" />
+    <Content Include="src\vendor\metronic\layout\img\hor-menu-red-arrow.png" />
+    <Content Include="src\vendor\metronic\layout\img\icon-color-close.png" />
+    <Content Include="src\vendor\metronic\layout\img\icon-color.png" />
+    <Content Include="src\vendor\metronic\layout\img\icon-img-down.png" />
+    <Content Include="src\vendor\metronic\layout\img\icon-img-up.png" />
+    <Content Include="src\vendor\metronic\layout\img\inbox-nav-arrow-blue.png" />
+    <Content Include="src\vendor\metronic\layout\img\loading-spinner-blue.gif" />
+    <Content Include="src\vendor\metronic\layout\img\loading-spinner-default.gif" />
+    <Content Include="src\vendor\metronic\layout\img\loading-spinner-grey.gif" />
+    <Content Include="src\vendor\metronic\layout\img\loading.gif" />
+    <Content Include="src\vendor\metronic\layout\img\logo-big-white.png" />
+    <Content Include="src\vendor\metronic\layout\img\logo-big.png" />
+    <Content Include="src\vendor\metronic\layout\img\logo-invert.png" />
+    <Content Include="src\vendor\metronic\layout\img\logo.png" />
+    <Content Include="src\vendor\metronic\layout\img\menu-toggler.png" />
+    <Content Include="src\vendor\metronic\layout\img\remove-icon-small.png" />
+    <Content Include="src\vendor\metronic\layout\img\search_icon_light.png" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar-menu-arrow-reverse.png" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar-menu-arrow-right.png" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar-menu-arrow.png" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_arrow_icon_light.png" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_arrow_icon_light_rtl.png" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_inline_toggler_icon_blue.jpg" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_inline_toggler_icon_darkblue.jpg" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_inline_toggler_icon_default.jpg" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_inline_toggler_icon_grey.jpg" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_inline_toggler_icon_light.jpg" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_inline_toggler_icon_light2.jpg" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_toggler_icon_blue.png" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_toggler_icon_darkblue.png" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_toggler_icon_default.png" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_toggler_icon_grey.png" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_toggler_icon_light.png" />
+    <Content Include="src\vendor\metronic\layout\img\sidebar_toggler_icon_light2.png" />
+    <Content Include="src\vendor\metronic\layout\layout.js" />
+    <Content Include="src\vendor\metronic\layout\quick-sidebar.js" />
+    <Content Include="src\vendor\metronic\metronic.js" />
+    <Content Include="src\vendor\moment\moment.cn.js" />
+    <Content Include="src\vendor\moment\moment.min.js" />
+    <Content Include="src\widget\05992d3434d3589b38a3a5431842d38f.gif" />
+    <Content Include="src\widget\2165b99c89c8431e7165530ccb5f89fb.gif" />
+    <Content Include="src\widget\2194ed34eeab5926a0035ca7105e133c.png" />
+    <Content Include="src\widget\7b9776076d5fceef4993b55c9383dedd.gif" />
+    <Content Include="src\widget\9ed4669f524bec38319be63a2ee4ba26.gif" />
+    <Content Include="src\widget\c4642b7ba1e7e02c8ca235563a112e4a.png" />
+    <Content Include="src\widget\main.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wikitec.Application\Wikitec.Application.csproj">
+      <Project>{90c94da8-0c19-45bd-abb0-63a694cdd3ac}</Project>
+      <Name>Wikitec.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wikitec.Domain\Wikitec.Domain.csproj">
+      <Project>{ee41548b-4ff1-4b0f-9ad8-0a378ee73b41}</Project>
+      <Name>Wikitec.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wikitec.DTO\Wikitec.DTO.csproj">
+      <Project>{5c19276c-34da-4c47-b072-3120dd3c2ccb}</Project>
+      <Name>Wikitec.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wikitec.Repository\Wikitec.Repository.csproj">
+      <Project>{3528ca57-59b7-4425-abc5-9914661ea2eb}</Project>
+      <Name>Wikitec.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\vendor\metronic\img\social\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\Unauthorized.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1357/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

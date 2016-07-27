@@ -1,0 +1,391 @@
+
+/* here you can put your own css to customize and override the theme*/
+	body {
+	font-family: "Microsoft Yahei", "Hiragino Sans GB", Helvetica, "Helvetica Neue", "微软雅黑";
+}
+.ms-controller {
+	visibility: hidden;
+}
+/*快捷样式，文本居中*/
+	.tc {
+	text-align: center;
+}
+/*在head的地方放置一个wizard的样式*/
+	.wizard-head {
+	height: 65px;
+	line-height: 65px;
+	background-color: #fff;
+}
+.wizard-head-title {
+	float: left;
+	color: #313338;
+	font-size: 20px;
+	display: inline;
+}
+.wizard-head-actions {
+	float: right;
+	margin-bottom: -25px;
+	line-height: 21px;
+}
+.tab2-content {
+	background: #FAFBFB;
+	position: relative;
+	height: 40px;
+	line-height: 40px;
+	border-top: 1px solid #EFF0F0;
+	border-bottom: 1px solid #EFF0F0;
+}
+.tab2-content ul {
+	margin: 5px 17px 0 0;
+	padding: 0;
+	list-style: none;
+}
+.tab2-content ul li {
+	float: left;
+	height: 21px;
+	line-height: 21px;
+	border-left: 1px solid #D2D3D4;
+	padding: 0 20px;
+	margin: 5px 0;
+}
+.tab2-content ul li:first-child {
+	border-left: 0px;
+}
+.tab2-content ul li a {
+	display: inline-block;
+	color: #585858;
+}
+.tab2-content ul li a:hover {
+	color: #0099FF;
+	text-decoration: none;
+}
+.tab2-content ul li a.active {
+	color: #0099FF;
+	font-weight: normal!important;
+}
+.content-bg {
+	background: #F3F3F3;
+	min-height: 900px;
+}
+.tool-well {
+	min-height: 20px;
+	padding: 0;
+	background-color: #fff;
+	width: 190px;
+}
+/*UL工具箱列表样式*/
+	.accordion-group .title {
+	padding: 15px 0 5px 0;
+	font-size: 16px;
+}
+.ul-tool {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.ul-tool li {
+	line-height: 40px;
+	height: 40px;
+	font-size: 15px;
+	background: #fff;
+	border-bottom: 1px solid #F6F7F7;
+	list-style-type: none;
+}
+.ul-tool li a {
+	display: block;
+	padding: 0 20px;
+}
+.ul-tool li a:hover {
+	display: block;
+	padding: 0 20px;
+	text-decoration: none;
+}
+.ul-tool li i {
+	margin: -3px 5px 0 0;
+}
+.ul-tool li:first-child {
+	border-top: 1px solid #F6F7F7;
+}
+.ul-tool li:hover i {
+	color: #d64635;
+}
+.ul-tool li:hover {
+	/* hover阴影*/
+	-moz-box-shadow: 0 0 5px #cccccc;
+	-webkit-box-shadow: 0 0 5px #cccccc;
+	box-shadow: 0 0 5px #cccccc;
+	/* hover放大*/
+	-webkit-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	transform: scale(1.05);
+	zoom: 1.05;
+}
+/*测试主体*/
+	.exam-title {
+	padding: 5px 50px 0 57px;
+	background: #fff;
+}
+.exam-title .p-title {
+	padding: 10px 0;
+	width: 100%;
+	text-align: left;
+	font-size: 16px;
+}
+.exam-title .p-title label {
+	font-size: 18px;
+}
+.placehoder {
+	margin: 10px 0;
+	height: 100px;
+	background: grey;
+}
+/*题目区域的样式*/
+	.question-area {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: relative;
+}
+.question-area li {
+	display: block;
+	width: 100%;
+	height: auto;
+	background: #fff;
+	margin-top: 6px;
+	position: relative;
+}
+.question-area .question {
+	border-bottom: 1px solid #EDF0F0;
+}
+.question-area .question-menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 8px 3px;
+	width: 50px;
+}
+.question-area .question-setup-group {
+	padding: 0 5px;
+	text-align: center;
+}
+.question-area .question-setup-group h4 {
+	padding-top: 4px;
+	margin-bottom: 10px;
+}
+.question-area .question-setup-group a {
+	width: 20px;
+	margin: 0 auto 8px;
+}
+.question-area .question-content {
+	margin-left: 50px;
+	min-height: 150px;
+	height: 100%;
+	padding: 8px;
+	border-left: 1px solid #EDF0F0;
+}
+.question-area .question-content .operation {
+	height: 25px;
+	margin-top: 10px;
+}
+.question-area .question-content .operation a {
+	float: left;
+	margin-right: 8px;
+}
+.question-area .drag-area {
+	width: 100%;
+	cursor: move;
+	z-index: 9;
+	padding: 5px 0 0 10px;
+	margin: -10px 0 0 -10px;
+}
+.question-area .drag-area .title {
+	font-size: 16px;
+	padding: 15px 0 0 0;
+	line-height: 30px;
+	position: relative;
+}
+.question-area .drag-area .title span {
+	cursor: pointer;
+}
+.unstyled {
+	font-size: 14px;
+	display: inline-block;
+	width: 100%;
+	padding: 0;
+}
+.unstyled li {
+	margin-top: 5px;
+	padding: 5px 0;
+	overflow: hidden;
+}
+/*设置评分的样式*/
+	.set-score-top {
+	position: relative;
+	padding: 5px 0 5px 20px;
+	border-bottom: 1px solid #EDF0F0;
+}
+.set-score-top .title {
+	font-size: 16px;
+	padding: 15px 0 0 0;
+	line-height: 30px;
+	position: relative;
+}
+.set-score-top .title span {
+	font-size: 14px;
+	color: #d0d0d0;
+	padding: 5px 8px;
+}
+.set-score-top .set-r {
+	line-height: 44px;
+	font-size: 16px;
+	padding-bottom: 0;
+}
+.set-r {
+	width: 310px;
+	padding: 0 10px 0px 10px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	height: 100%;
+	color: #333;
+	background-color: #f3f3f3;
+}
+.set-mun {
+	color: #0099FF;
+}
+.set-score-content {
+	position: relative;
+	padding: 0 0 0 20px;
+	border-bottom: 1px solid #EDF0F0;
+}
+.q-title {
+	padding: 10px 0 10px 0;
+	position: relative;
+}
+.q-title .set-r {
+	line-height: 56px;
+	padding-bottom: 0;
+}
+.option-n {
+	position: relative;
+}
+.option-label {
+	min-height: 30px;
+	padding-left: 22px;
+	padding-bottom: 0px;
+}
+.fraction-n {
+	margin-top: 2px;
+	font-size: 14px;
+	font-weight: normal;
+}
+.fraction-n input[type="text"] {
+	margin: 0px 5px 0 0;
+	width: 60px;
+	border: 1px solid #EDF0F0;
+	padding: 2px 5px;
+	vertical-align: middle;
+}
+.score-tip {
+	color: red;
+	padding-left: 10px;
+}
+.active-option .option-label {
+	background-color: #C8EAFF;
+}
+/*结果评价*/
+	.reault-content {
+	position: relative;
+	padding: 10px 20px;
+	border-bottom: 1px solid #EDF0F0;
+	background: #F5FBFF;
+}
+.reault-content input {
+	margin: 0 10px;
+	width: 80px;
+	vertical-align: middle;
+	border: 1px solid #ccc;
+	padding: 2px 3px;
+}
+.reault-content .review {
+	padding-top: 10px;
+}
+.reault-content .close {
+	/*position: absolute;*/
+	/*right: 23px;*/
+	/*top: 15px;*/
+}
+/*affix自定义样式，因为顶部有固定的导航栏，需要算上导航栏的高度*/
+	.affix {
+	top: 60px;
+}
+/*可排序的元素占位符样式*/
+	.ui-sort-placeholder {
+	border: 5px solid #fed22f;
+	background: #ffe45c;
+	color: #363636;
+}
+.my-input {
+	font-size: 14px;
+	font-weight: normal;
+	color: #333333;
+	background-color: white;
+	border: 1px solid #e5e5e5;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	width: 90%;
+}
+.question-category {
+	padding: 0;
+	list-style: none;
+	margin: 10px 0 0;
+}
+/*.question-category li:first-child {*/
+	/*border-top: 1px solid #eeeeee;*/
+	/*
+}*/
+	.question-category li {
+	display: block;
+	padding: 15px;
+	border: 1px solid #eeeeee;
+	cursor: move;
+	background: #F3F3F3;
+	margin-bottom: 10px;
+}
+.questions-empty {
+	padding: 20px;
+}
+/*表格中的操作TD样式*/
+	tr .op {
+	text-align: center;
+}
+/*对于nav-tab标题选中状态下的badge样式*/
+	.nav > .active > a > .badge {
+	color: #FFF;
+	background-color: #f3565d;
+}
+.control-label {
+	text-align: left;
+}
+
+.handover-info{
+  text-align: center;
+}
+
+.handover-info h3{
+  margin: 0 0 5px 0;
+}
+
+.handover-info span{
+  font-size: 15px;
+}
+
+/*首页之定义宽度 为使首页头部5个块水平显示，将lg的宽度改成20%*/
+	@media (min-width: 1200px) {
+	.col-self-lg-2 {
+	width: 20%;
+	float: left;
+}
+}

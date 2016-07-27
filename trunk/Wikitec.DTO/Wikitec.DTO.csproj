@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C19276C-34DA-4C47-B072-3120DD3C2CCB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Wikitec.DTO</RootNamespace>
+    <AssemblyName>Wikitec.DTO</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Wikitec.Infrastructure">
+      <HintPath>..\packages\Wikitec.Infrastructure\Wikitec.Infrastructure.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Systems\ListOption\ListOptionDto.cs" />
+    <Compile Include="Systems\ListOption\ListOptionItemDto.cs" />
+    <Compile Include="Systems\ListOption\ListOptionSearchDto.cs" />
+    <Compile Include="Systems\SysFunc\SysFuncLvl1Dto.cs" />
+    <Compile Include="Systems\SysFunc\SysFuncLvl3Dto.cs" />
+    <Compile Include="Systems\SysFunc\SysFuncDto.cs" />
+    <Compile Include="Systems\SysFunc\SysFuncLvl2Dto.cs" />
+    <Compile Include="Systems\SysRole\SysRoleDto.cs" />
+    <Compile Include="Systems\SysRole\SysRoleItemDto.cs" />
+    <Compile Include="Systems\SysRole\SysRoleSearchDto.cs" />
+    <Compile Include="Systems\SysRole\SysUserRolesDto.cs" />
+    <Compile Include="Systems\SysUser\ApiDeptDto.cs" />
+    <Compile Include="Systems\SysUser\ApiOrgDto.cs" />
+    <Compile Include="Systems\SysUser\SysUserDto.cs" />
+    <Compile Include="Systems\SysUser\SysUserItemDto.cs" />
+    <Compile Include="Systems\SysUser\SysUserLoginDto.cs" />
+    <Compile Include="Systems\SysUser\SysUserSearchDto.cs" />
+    <Compile Include="Systems\SysUser\ApiUserDto.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wikitec.Domain\Wikitec.Domain.csproj">
+      <Project>{ee41548b-4ff1-4b0f-9ad8-0a378ee73b41}</Project>
+      <Name>Wikitec.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Readme.docx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

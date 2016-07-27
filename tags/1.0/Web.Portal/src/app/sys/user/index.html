@@ -1,0 +1,114 @@
+﻿<h3 class="page-title">员工管理 <small>列表</small>
+</h3>
+<div ms-controller="sysUserVm" class="ms-controller">
+    <!--导航条-->
+    <div class="page-bar">
+        <wk:navigation list='[{css:"",name:"员工管理",url:""}]'></wk:navigation>
+    </div>
+    <div class="portlet light bordered">
+        <!--查询条件-->
+        <div class="portlet-body form flip-scroll">
+            <form role="form" class="form-horizontal">
+                <div class="form-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label col-md-4">员工姓名:</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" ms-duplex-value="searchDto.Name" maxlength="20">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label col-md-4">员工角色:</label>
+                                <div class="col-md-8">
+                                    <wk:select2 config="$selectOptRoles" duplex="searchDto.RoleId" placeholder="请选择角色"></wk:select2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions right">
+                    <button class="btn green" type="button" ms-click="searchUsers()">搜索<i class="fa fa-search"></i></button>
+                </div>
+            </form>
+        </div>
+        <!--列表-->
+        <wk:grid config="$gridOpt">
+            <table class="table table-striped table-bordered table-advance table-hover"
+                   style="text-align: center">
+                <thead>
+                    <tr>
+                        <th style="text-align: center">序号</th>
+                        <th style="text-align: center">登录账号</th>
+                        <th style="text-align: center">员工姓名</th>
+                        <th style="text-align: center">性别</th>
+                        <th style="text-align: center">所属部门</th>
+                        <th style="text-align: center">系统角色</th>
+                        <th style="text-align: center; width: 160px;">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ms-repeat="data">
+                        <td class="highlight">{{$index+1}}</td>
+                        <td>{{el.Account}}</td>
+                        <td>{{el.Name}}</td>
+                        <td>{{el.Gender}}</td>
+                        <td>{{el.DepartmentName}}</td>
+                        <td>{{el.SysRoleName}}</td>
+                        <td>
+                            <a href="javascript:void(0);" class="btn default btn-xs" ms-click="editUser(el.Account)">
+                                <i class="fa fa-share-square-o"></i>查看编辑 
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </wk:grid>
+    </div>
+    <!--编辑查看用户信息-->
+    <wk:dialog config="$dialogOpt">
+                <form class="form-horizontal" role="form" id="create-sysuser-form">
+                    <div class="modal-body">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">姓名:</label>
+                                <div class="col-md-9">
+                                    <input type="text" name="userName" class="form-control" ms-duplex="userDto.Name" maxlength="20" disabled="disabled" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">性别:</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" ms-duplex="userDto.GenderStr" disabled="disabled" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">账号:</label>
+                                <div class="col-md-9">
+                                    <input type="text" name="userAccount" class="form-control" ms-duplex="userDto.Account" disabled="disabled" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">部门:</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" ms-duplex="userDto.DepartmentName" maxlength="50" disabled="disabled" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label"><span class="required">*</span>角色:</label>
+                                <div class="col-md-9">
+                                    <wk:select2 config="$selectOptRoleAdd" name="userRole" duplex="userDto.SysRoleId" placeholder="请选择角色"></wk:select2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn green" ms-click="save">保存</button>
+                    </div>
+                </form>
+             </wk:dialog>
+
+</div>

@@ -1,0 +1,14 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "错误";
+}
+
+<div class="note note-danger">
+    <h4 class="block">错误!</h4>
+    <p>
+        处理你的请求时出错;
+    </p>
+
+    <p>详细信息: @Model.Exception.Message</p>
+</div>
